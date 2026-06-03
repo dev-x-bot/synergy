@@ -5,27 +5,31 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Synergy — Coming Soon</title>
+<meta name="description" content="Synergy — Global IT Solutions. A smarter way to deliver secure, scalable IT. Launching soon." />
+<meta name="theme-color" content="#fbfcf8" />
+<link rel="icon" type="image/svg+xml" href="synergy-logo.svg" />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&family=Onest:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
   :root{
-    --bg:#070b11;
-    --bg-2:#0a111a;
-    --teal:#12B5A4;
-    --teal-soft:#1fd6c2;
-    --ink:#ffffff;
-    --slate:#8A94A6;
-    --slate-dim:#5e6776;
-    --glass:rgba(255,255,255,0.045);
-    --glass-line:rgba(255,255,255,0.10);
-    --radius:28px;
+    --bg:#fbfcf8;
+    --bg-2:#f3f5ee;
+    --gold:#FCCC01;
+    --lime:#8DFE1F;
+    --lime-deep:#4caa12;     /* readable green for text on light */
+    --ink:#0d1117;
+    --ink-soft:#283041;
+    --slate:#5b6470;
+    --slate-dim:#8b93a0;
+    --line:rgba(13,17,23,0.10);
+    --card:#ffffff;
+    --radius:30px;
     --font-display:'Sora',sans-serif;
     --font-body:'Onest',sans-serif;
   }
 
   *{margin:0;padding:0;box-sizing:border-box;}
-
   html,body{height:100%;}
 
   body{
@@ -44,18 +48,18 @@
 
   /* ---------- Ambient background ---------- */
   .ambient{position:fixed;inset:0;z-index:0;overflow:hidden;pointer-events:none;}
-  .blob{position:absolute;border-radius:50%;filter:blur(120px);opacity:.55;}
-  .blob.teal{
-    width:55vw;height:55vw;background:radial-gradient(circle,#12B5A4 0%,transparent 70%);
-    top:-18%;right:-12%;animation:drift1 22s ease-in-out infinite;
+  .blob{position:absolute;border-radius:50%;filter:blur(120px);}
+  .blob.gold{
+    width:52vw;height:52vw;background:radial-gradient(circle,var(--gold) 0%,transparent 70%);
+    top:-20%;right:-12%;opacity:.32;animation:drift1 22s ease-in-out infinite;
   }
-  .blob.deep{
-    width:48vw;height:48vw;background:radial-gradient(circle,#0c5e57 0%,transparent 70%);
-    bottom:-20%;left:-12%;opacity:.5;animation:drift2 26s ease-in-out infinite;
+  .blob.lime{
+    width:48vw;height:48vw;background:radial-gradient(circle,var(--lime) 0%,transparent 70%);
+    bottom:-22%;left:-14%;opacity:.30;animation:drift2 26s ease-in-out infinite;
   }
   .blob.spark{
-    width:24vw;height:24vw;background:radial-gradient(circle,#1fd6c2 0%,transparent 70%);
-    top:40%;left:45%;opacity:.18;animation:drift3 18s ease-in-out infinite;
+    width:26vw;height:26vw;background:radial-gradient(circle,var(--gold) 0%,transparent 70%);
+    top:44%;left:46%;opacity:.12;animation:drift3 18s ease-in-out infinite;
   }
   @keyframes drift1{0%,100%{transform:translate(0,0) scale(1);}50%{transform:translate(-5%,6%) scale(1.08);}}
   @keyframes drift2{0%,100%{transform:translate(0,0) scale(1);}50%{transform:translate(6%,-5%) scale(1.1);}}
@@ -65,48 +69,33 @@
   .ambient::after{
     content:"";position:absolute;inset:0;
     background-image:
-      linear-gradient(rgba(255,255,255,.022) 1px,transparent 1px),
-      linear-gradient(90deg,rgba(255,255,255,.022) 1px,transparent 1px);
+      linear-gradient(rgba(13,17,23,.030) 1px,transparent 1px),
+      linear-gradient(90deg,rgba(13,17,23,.030) 1px,transparent 1px);
     background-size:64px 64px;
     mask-image:radial-gradient(circle at 50% 45%,#000 0%,transparent 78%);
     -webkit-mask-image:radial-gradient(circle at 50% 45%,#000 0%,transparent 78%);
   }
 
-  /* matte grain overlay (kills glossy look) */
-  .grain{
-    position:fixed;inset:0;z-index:3;pointer-events:none;opacity:.5;
-    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.45'/%3E%3C/svg%3E");
-    mix-blend-mode:overlay;
-  }
-
-  /* ---------- Glass card ---------- */
+  /* ---------- Card ---------- */
   .card{
     position:relative;z-index:2;
-    width:100%;max-width:680px;
-    padding:56px 52px 46px;
+    width:100%;max-width:700px;
+    padding:54px 52px 46px;
     border-radius:var(--radius);
-    background:linear-gradient(160deg,rgba(255,255,255,.06),rgba(255,255,255,.02));
-    backdrop-filter:blur(26px) saturate(140%);
-    -webkit-backdrop-filter:blur(26px) saturate(140%);
-    border:1px solid var(--glass-line);
+    background:var(--card);
+    border:1px solid var(--line);
     box-shadow:
-      0 1px 0 rgba(255,255,255,.08) inset,
-      0 30px 80px -30px rgba(0,0,0,.85),
-      0 0 0 1px rgba(0,0,0,.2);
+      0 1px 0 rgba(255,255,255,.9) inset,
+      0 40px 90px -40px rgba(13,17,23,.28),
+      0 8px 24px -16px rgba(13,17,23,.18);
     text-align:center;
     animation:rise .9s cubic-bezier(.16,1,.3,1) both;
   }
-  /* matte texture inside the card */
-  .card::before{
-    content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;
-    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n2'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n2)' opacity='0.05'/%3E%3C/svg%3E");
-    opacity:.6;
-  }
-  /* thin teal top edge */
+  /* thin brand top edge */
   .card::after{
-    content:"";position:absolute;top:0;left:18%;right:18%;height:1px;border-radius:2px;
-    background:linear-gradient(90deg,transparent,var(--teal),transparent);
-    opacity:.7;
+    content:"";position:absolute;top:0;left:16%;right:16%;height:3px;border-radius:3px;
+    background:linear-gradient(90deg,transparent,var(--gold),var(--lime),transparent);
+    opacity:.95;
   }
 
   @keyframes rise{from{opacity:0;transform:translateY(26px) scale(.985);}to{opacity:1;transform:none;}}
@@ -116,42 +105,42 @@
   .d4{animation-delay:.52s;} .d5{animation-delay:.64s;} .d6{animation-delay:.76s;}
   @keyframes fade{from{opacity:0;transform:translateY(14px);}to{opacity:1;transform:none;}}
 
-  .logo{width:230px;max-width:78%;height:auto;margin:0 auto 30px;display:block;}
+  .logo{width:360px;max-width:84%;height:auto;margin:4px auto 30px;display:block;}
 
   .badge{
     display:inline-flex;align-items:center;gap:9px;
-    font-family:var(--font-body);font-size:12.5px;font-weight:500;letter-spacing:.16em;
-    text-transform:uppercase;color:var(--teal-soft);
+    font-family:var(--font-body);font-size:12.5px;font-weight:600;letter-spacing:.16em;
+    text-transform:uppercase;color:var(--lime-deep);
     padding:8px 16px;border-radius:100px;
-    background:rgba(18,181,164,.10);
-    border:1px solid rgba(18,181,164,.28);
+    background:linear-gradient(120deg,rgba(252,204,1,.16),rgba(141,254,31,.18));
+    border:1px solid rgba(141,254,31,.40);
   }
-  .dot{width:7px;height:7px;border-radius:50%;background:var(--teal-soft);
-    box-shadow:0 0 0 0 rgba(31,214,194,.6);animation:pulse 2.2s infinite;}
-  @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(31,214,194,.55);}70%{box-shadow:0 0 0 9px rgba(31,214,194,0);}100%{box-shadow:0 0 0 0 rgba(31,214,194,0);}}
+  .dot{width:7px;height:7px;border-radius:50%;background:var(--lime-deep);
+    box-shadow:0 0 0 0 rgba(76,170,18,.6);animation:pulse 2.2s infinite;}
+  @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(76,170,18,.5);}70%{box-shadow:0 0 0 9px rgba(76,170,18,0);}100%{box-shadow:0 0 0 0 rgba(76,170,18,0);}}
 
   h1{
     font-family:var(--font-display);font-weight:600;
-    font-size:clamp(32px,5.4vw,52px);line-height:1.05;letter-spacing:-.02em;
-    margin:26px 0 0;
+    font-size:clamp(32px,5.4vw,52px);line-height:1.06;letter-spacing:-.02em;
+    margin:26px 0 0;color:var(--ink);
   }
   h1 .accent{
-    background:linear-gradient(120deg,var(--teal-soft),var(--teal) 60%,#0e8c7f);
+    background:linear-gradient(120deg,#e0a800 0%,var(--gold) 30%,var(--lime-deep) 100%);
     -webkit-background-clip:text;background-clip:text;color:transparent;
   }
   .sub{
     color:var(--slate);font-size:clamp(15px,2.2vw,17px);line-height:1.65;
-    max-width:430px;margin:18px auto 0;font-weight:400;
+    max-width:450px;margin:18px auto 0;font-weight:400;
   }
 
   /* ---------- Notify ---------- */
   .notify{
-    display:flex;gap:10px;margin:34px auto 0;max-width:420px;
-    padding:7px 7px 7px 7px;border-radius:100px;
-    background:rgba(255,255,255,.04);border:1px solid var(--glass-line);
-    backdrop-filter:blur(8px);transition:border-color .25s,box-shadow .25s;
+    display:flex;gap:10px;margin:34px auto 0;max-width:430px;
+    padding:7px;border-radius:100px;
+    background:var(--bg-2);border:1px solid var(--line);
+    transition:border-color .25s,box-shadow .25s;
   }
-  .notify:focus-within{border-color:rgba(18,181,164,.45);box-shadow:0 0 0 4px rgba(18,181,164,.10);}
+  .notify:focus-within{border-color:rgba(141,254,31,.55);box-shadow:0 0 0 4px rgba(141,254,31,.16);}
   .notify input{
     flex:1;background:transparent;border:none;outline:none;color:var(--ink);
     font-family:var(--font-body);font-size:15px;padding:0 16px;
@@ -159,29 +148,29 @@
   .notify input::placeholder{color:var(--slate-dim);}
   .notify button{
     border:none;cursor:pointer;white-space:nowrap;
-    font-family:var(--font-display);font-weight:600;font-size:14.5px;color:#04211e;
-    padding:12px 24px;border-radius:100px;
-    background:linear-gradient(120deg,var(--teal-soft),var(--teal));
-    box-shadow:0 8px 20px -8px rgba(18,181,164,.7);
+    font-family:var(--font-display);font-weight:600;font-size:14.5px;color:#16210a;
+    padding:12px 26px;border-radius:100px;
+    background:linear-gradient(120deg,var(--gold),var(--lime));
+    box-shadow:0 8px 20px -8px rgba(141,254,31,.7);
     transition:transform .18s,box-shadow .18s,filter .18s;
   }
-  .notify button:hover{transform:translateY(-1px);filter:brightness(1.06);box-shadow:0 12px 26px -8px rgba(18,181,164,.8);}
+  .notify button:hover{transform:translateY(-1px);filter:brightness(1.04);box-shadow:0 12px 26px -8px rgba(141,254,31,.8);}
   .notify button:active{transform:translateY(0);}
   .note{font-size:12.5px;color:var(--slate-dim);margin-top:14px;min-height:16px;transition:color .25s;}
-  .note.ok{color:var(--teal-soft);}
+  .note.ok{color:var(--lime-deep);font-weight:500;}
 
   /* ---------- Footer ---------- */
-  .foot{display:flex;align-items:center;justify-content:center;gap:18px;margin-top:38px;}
+  .foot{display:flex;align-items:center;justify-content:center;gap:16px;margin-top:38px;}
   .foot a{
     width:40px;height:40px;display:grid;place-items:center;border-radius:12px;
-    color:var(--slate);background:rgba(255,255,255,.03);border:1px solid var(--glass-line);
+    color:var(--slate);background:var(--bg-2);border:1px solid var(--line);
     transition:color .2s,transform .2s,border-color .2s,background .2s;
   }
-  .foot a:hover{color:var(--teal-soft);border-color:rgba(18,181,164,.4);transform:translateY(-2px);background:rgba(18,181,164,.08);}
+  .foot a:hover{color:var(--ink);border-color:rgba(141,254,31,.55);transform:translateY(-2px);background:linear-gradient(120deg,rgba(252,204,1,.12),rgba(141,254,31,.14));}
   .foot svg{width:18px;height:18px;}
 
   @media(max-width:520px){
-    .card{padding:42px 26px 36px;}
+    .card{padding:42px 24px 36px;}
     .notify{flex-direction:column;border-radius:20px;padding:8px;}
     .notify input{padding:12px 16px;text-align:center;}
     .notify button{width:100%;padding:13px;}
@@ -190,21 +179,13 @@
 </head>
 <body>
   <div class="ambient">
-    <div class="blob teal"></div>
-    <div class="blob deep"></div>
+    <div class="blob gold"></div>
+    <div class="blob lime"></div>
     <div class="blob spark"></div>
   </div>
 
   <main class="card">
-    <!-- Brand logo (faithful to supplied SVG) -->
-    <svg class="logo stagger d1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 684 300">
-      <rect x="40" y="68" width="120" height="120" rx="34" fill="none" stroke="#FFFFFF" stroke-width="26"/>
-      <rect x="118" y="112" width="120" height="120" rx="34" fill="none" stroke="#12B5A4" stroke-width="26"/>
-      <clipPath id="wv"><rect x="40" y="68" width="120" height="120" rx="34"/></clipPath>
-      <g clip-path="url(#wv)"><rect x="118" y="112" width="120" height="120" rx="34" fill="none" stroke="#FFFFFF" stroke-width="26" stroke-dasharray="40 400" stroke-dashoffset="-150"/></g>
-      <g transform="translate(288 157.1)"><path d="M24.36 1.06 Q15.25 1.06 9.38 -3.69 Q3.52 -8.44 2.29 -16.32 L12.63 -18.86 Q13.53 -13.61 16.77 -10.98 Q20.01 -8.37 24.77 -8.37 Q27.30 -8.37 29.31 -9.22 Q31.33 -10.08 32.51 -11.76 Q33.70 -13.45 33.70 -15.75 Q33.70 -17.87 32.47 -19.42 Q31.24 -20.99 28.74 -22.29 Q26.24 -23.61 22.47 -25.01 Q17.05 -27.14 13.40 -29.56 Q9.76 -31.98 7.96 -35.17 Q6.15 -38.37 6.15 -42.72 Q6.15 -47.32 8.40 -50.84 Q10.66 -54.36 14.72 -56.41 Q18.78 -58.46 24.19 -58.46 Q29.93 -58.46 34.40 -55.80 Q38.87 -53.13 41.58 -47.89 L33.13 -42.72 Q31.40 -45.84 29.06 -47.43 Q26.73 -49.03 23.86 -49.03 Q21.81 -49.03 20.21 -48.25 Q18.62 -47.48 17.67 -46.12 Q16.73 -44.77 16.73 -42.97 Q16.73 -41.08 17.83 -39.60 Q18.94 -38.13 21.44 -36.77 Q23.95 -35.43 27.96 -33.95 Q33.29 -31.98 36.85 -29.60 Q40.42 -27.23 42.31 -24.06 Q44.20 -20.91 44.20 -16.40 Q44.20 -11.31 41.69 -7.33 Q39.19 -3.36 34.76 -1.14 Q30.34 1.06 24.36 1.06 Z M68.07 0.00 L68.07 -22.38 L47.98 -57.16 L60.12 -57.16 L73.07 -32.88 L86.52 -57.16 L98.57 -57.16 L78.64 -22.38 L78.64 0.00 L68.07 0.00 Z M104.90 0.00 L104.90 -57.16 L115.80 -57.16 L142.45 -13.86 L139.82 -13.86 L139.82 -57.16 L150.41 -57.16 L150.41 0.00 L139.41 0.00 L112.85 -43.38 L115.47 -43.38 L115.47 0.00 L104.90 0.00 Z M161.89 0.00 L161.89 -57.16 L199.93 -57.16 L199.93 -47.64 L172.46 -47.64 L172.46 -34.03 L198.14 -34.03 L198.14 -24.60 L172.46 -24.60 L172.46 -9.51 L199.93 -9.51 L199.93 0.00 L161.89 0.00 Z M209.79 0.00 L209.79 -57.16 L228.65 -57.16 Q235.62 -57.16 239.87 -55.14 Q244.14 -53.13 246.15 -49.40 Q248.16 -45.68 248.16 -40.59 Q248.16 -32.72 243.69 -28.42 Q239.22 -24.11 230.94 -23.61 Q229.06 -23.54 227.09 -23.54 Q225.13 -23.54 223.73 -23.54 L220.36 -23.54 L220.36 0.00 L209.79 0.00 Z M240.86 0.00 L226.51 -24.77 L237.34 -26.07 L253.08 0.00 L240.86 0.00 Z M220.36 -33.04 L227.59 -33.04 Q230.29 -33.04 232.55 -33.66 Q234.80 -34.27 236.18 -35.88 Q237.58 -37.48 237.58 -40.42 Q237.58 -43.46 236.18 -45.01 Q234.80 -46.57 232.55 -47.10 Q230.29 -47.64 227.59 -47.64 L220.36 -47.64 L220.36 -33.04 Z M284.91 1.31 Q277.04 1.31 271.04 -2.46 Q265.06 -6.23 261.61 -12.95 Q258.18 -19.68 258.18 -28.62 Q258.18 -37.55 261.61 -44.23 Q265.06 -50.92 271.25 -54.68 Q277.45 -58.46 285.56 -58.46 Q294.67 -58.46 301.27 -53.91 Q307.87 -49.37 310.74 -41.41 L300.73 -37.72 Q298.92 -42.72 295.03 -45.51 Q291.13 -48.30 285.56 -48.30 Q280.47 -48.30 276.66 -45.92 Q272.85 -43.54 270.84 -39.16 Q268.84 -34.77 268.84 -28.62 Q268.84 -22.47 270.84 -18.04 Q272.85 -13.61 276.66 -11.22 Q280.47 -8.85 285.56 -8.85 Q288.19 -8.85 290.97 -9.58 Q293.76 -10.33 296.09 -12.17 Q298.44 -14.02 299.87 -17.30 Q301.31 -20.58 301.31 -25.66 L301.31 -28.94 L303.69 -21.56 L287.29 -21.56 L287.29 -31.08 L310.74 -31.08 L310.74 0.00 L301.38 0.00 L299.91 -9.26 L301.72 -7.87 Q300.24 -4.84 297.69 -2.79 Q295.16 -0.74 291.92 0.28 Q288.67 1.31 284.91 1.31 Z M336.17 0.00 L336.17 -22.38 L316.08 -57.16 L328.21 -57.16 L341.17 -32.88 L354.62 -57.16 L366.66 -57.16 L346.74 -22.38 L346.74 0.00 L336.17 0.00 Z" fill="#FFFFFF"/></g>
-      <g transform="translate(288 201.1)"><path d="M8.78 0.31 Q6.53 0.31 4.80 -0.77 Q3.07 -1.85 2.08 -3.81 Q1.10 -5.78 1.10 -8.38 Q1.10 -10.97 2.08 -12.92 Q3.07 -14.88 4.83 -15.96 Q6.60 -17.04 8.93 -17.04 Q11.50 -17.04 13.38 -15.77 Q15.26 -14.50 16.08 -12.24 L13.80 -11.40 Q13.20 -12.96 11.95 -13.83 Q10.70 -14.71 8.93 -14.71 Q7.30 -14.71 6.08 -13.93 Q4.87 -13.15 4.21 -11.74 Q3.55 -10.34 3.55 -8.38 Q3.55 -6.41 4.21 -4.99 Q4.87 -3.58 6.08 -2.80 Q7.30 -2.02 8.93 -2.02 Q9.77 -2.02 10.64 -2.24 Q11.52 -2.47 12.26 -3.06 Q13.01 -3.65 13.46 -4.65 Q13.92 -5.66 13.92 -7.25 L13.92 -8.38 L14.47 -6.70 L9.72 -6.70 L9.72 -8.88 L16.08 -8.88 L16.08 0.00 L13.92 0.00 L13.58 -3.07 L13.99 -2.76 Q13.56 -1.70 12.77 -1.02 Q11.98 -0.34 10.96 -0.01 Q9.94 0.31 8.78 0.31 Z M25.37 0.00 L25.37 -16.73 L27.82 -16.73 L27.82 -2.18 L35.19 -2.18 L35.19 0.00 L25.37 0.00 Z M50.45 0.31 Q48.12 0.31 46.35 -0.77 Q44.59 -1.85 43.60 -3.80 Q42.62 -5.76 42.62 -8.35 Q42.62 -10.97 43.60 -12.92 Q44.59 -14.88 46.35 -15.96 Q48.12 -17.04 50.45 -17.04 Q52.82 -17.04 54.60 -15.96 Q56.38 -14.88 57.36 -12.92 Q58.34 -10.97 58.34 -8.35 Q58.34 -5.76 57.34 -3.80 Q56.35 -1.85 54.57 -0.77 Q52.80 0.31 50.45 0.31 Z M50.45 -2.02 Q52.13 -2.02 53.33 -2.80 Q54.53 -3.58 55.20 -5.00 Q55.87 -6.43 55.87 -8.35 Q55.87 -10.30 55.20 -11.72 Q54.53 -13.15 53.33 -13.93 Q52.13 -14.71 50.45 -14.71 Q48.82 -14.71 47.60 -13.94 Q46.39 -13.18 45.73 -11.75 Q45.07 -10.32 45.07 -8.35 Q45.07 -6.41 45.73 -4.98 Q46.39 -3.55 47.60 -2.78 Q48.82 -2.02 50.45 -2.02 Z M67.27 0.00 L67.27 -16.73 L72.79 -16.73 Q75.21 -16.73 76.59 -15.62 Q77.97 -14.52 77.97 -12.53 Q77.97 -11.33 77.45 -10.40 Q76.92 -9.48 75.96 -8.98 Q77.40 -8.54 78.12 -7.47 Q78.84 -6.41 78.84 -4.78 Q78.84 -2.52 77.42 -1.26 Q76.01 0.00 73.44 0.00 L67.27 0.00 Z M69.72 -2.26 L73.27 -2.26 Q76.41 -2.26 76.41 -4.90 Q76.41 -6.17 75.68 -6.86 Q74.95 -7.56 73.63 -7.56 L69.72 -7.56 L69.72 -2.26 Z M69.72 -9.74 L73.08 -9.74 Q74.18 -9.74 74.87 -10.39 Q75.55 -11.04 75.55 -12.17 Q75.55 -13.27 74.83 -13.87 Q74.11 -14.47 72.79 -14.47 L69.72 -14.47 L69.72 -9.74 Z M86.31 0.00 L92.81 -16.73 L94.71 -16.73 L101.19 0.00 L98.52 0.00 L93.77 -13.18 L88.99 0.00 L86.31 0.00 Z M90.15 -3.72 L90.89 -5.90 L96.60 -5.90 L97.42 -3.72 L90.15 -3.72 Z M109.34 0.00 L109.34 -16.73 L111.79 -16.73 L111.79 -2.18 L119.16 -2.18 L119.16 0.00 L109.34 0.00 Z M139.54 0.00 L139.54 -16.73 L141.98 -16.73 L141.98 0.00 L139.54 0.00 Z M155.59 0.00 L155.59 -14.54 L150.12 -14.54 L150.12 -16.73 L163.51 -16.73 L163.51 -14.54 L158.06 -14.54 L158.06 0.00 L155.59 0.00 Z M189.15 0.29 Q186.58 0.29 184.93 -1.05 Q183.29 -2.40 182.93 -4.63 L185.31 -5.21 Q185.57 -3.58 186.62 -2.74 Q187.68 -1.90 189.22 -1.90 Q190.11 -1.90 190.79 -2.22 Q191.47 -2.54 191.88 -3.15 Q192.29 -3.77 192.29 -4.54 Q192.29 -5.35 191.84 -5.88 Q191.40 -6.41 190.59 -6.83 Q189.79 -7.25 188.67 -7.68 Q187.20 -8.23 186.15 -8.88 Q185.11 -9.53 184.55 -10.43 Q183.99 -11.33 183.99 -12.60 Q183.99 -13.90 184.62 -14.89 Q185.26 -15.89 186.41 -16.46 Q187.56 -17.04 189.07 -17.04 Q190.68 -17.04 191.94 -16.31 Q193.20 -15.58 193.95 -14.11 L192.00 -12.91 Q191.47 -13.87 190.71 -14.37 Q189.96 -14.88 189.00 -14.88 Q188.26 -14.88 187.67 -14.59 Q187.08 -14.30 186.75 -13.81 Q186.43 -13.32 186.43 -12.65 Q186.43 -11.95 186.83 -11.45 Q187.23 -10.94 188.01 -10.54 Q188.79 -10.15 189.96 -9.72 Q191.45 -9.14 192.50 -8.48 Q193.56 -7.82 194.13 -6.91 Q194.71 -6.00 194.71 -4.68 Q194.71 -3.24 194.00 -2.12 Q193.30 -1.01 192.05 -0.36 Q190.80 0.29 189.15 0.29 Z M210.65 0.31 Q208.32 0.31 206.55 -0.77 Q204.79 -1.85 203.81 -3.80 Q202.82 -5.76 202.82 -8.35 Q202.82 -10.97 203.81 -12.92 Q204.79 -14.88 206.55 -15.96 Q208.32 -17.04 210.65 -17.04 Q213.02 -17.04 214.80 -15.96 Q216.58 -14.88 217.56 -12.92 Q218.54 -10.97 218.54 -8.35 Q218.54 -5.76 217.54 -3.80 Q216.55 -1.85 214.77 -0.77 Q213.00 0.31 210.65 0.31 Z M210.65 -2.02 Q212.33 -2.02 213.53 -2.80 Q214.73 -3.58 215.40 -5.00 Q216.07 -6.43 216.07 -8.35 Q216.07 -10.30 215.40 -11.72 Q214.73 -13.15 213.53 -13.93 Q212.33 -14.71 210.65 -14.71 Q209.02 -14.71 207.80 -13.94 Q206.59 -13.18 205.93 -11.75 Q205.27 -10.32 205.27 -8.35 Q205.27 -6.41 205.93 -4.98 Q206.59 -3.55 207.80 -2.78 Q209.02 -2.02 210.65 -2.02 Z M227.47 0.00 L227.47 -16.73 L229.92 -16.73 L229.92 -2.18 L237.29 -2.18 L237.29 0.00 L227.47 0.00 Z M251.47 0.31 Q248.45 0.31 246.85 -1.29 Q245.26 -2.90 245.26 -6.05 L245.26 -16.73 L247.70 -16.73 L247.70 -6.34 Q247.70 -4.90 248.06 -3.91 Q248.42 -2.93 249.25 -2.42 Q250.08 -1.92 251.47 -1.92 Q252.86 -1.92 253.72 -2.43 Q254.57 -2.95 254.93 -3.92 Q255.29 -4.90 255.29 -6.34 L255.29 -16.73 L257.71 -16.73 L257.71 -6.17 Q257.71 -2.98 256.13 -1.33 Q254.54 0.31 251.47 0.31 Z M271.18 0.00 L271.18 -14.54 L265.71 -14.54 L265.71 -16.73 L279.10 -16.73 L279.10 -14.54 L273.65 -14.54 L273.65 0.00 L271.18 0.00 Z M287.23 0.00 L287.23 -16.73 L289.68 -16.73 L289.68 0.00 L287.23 0.00 Z M306.41 0.31 Q304.08 0.31 302.31 -0.77 Q300.55 -1.85 299.56 -3.80 Q298.58 -5.76 298.58 -8.35 Q298.58 -10.97 299.56 -12.92 Q300.55 -14.88 302.31 -15.96 Q304.08 -17.04 306.41 -17.04 Q308.78 -17.04 310.56 -15.96 Q312.34 -14.88 313.32 -12.92 Q314.30 -10.97 314.30 -8.35 Q314.30 -5.76 313.31 -3.80 Q312.31 -1.85 310.53 -0.77 Q308.76 0.31 306.41 0.31 Z M306.41 -2.02 Q308.09 -2.02 309.29 -2.80 Q310.49 -3.58 311.16 -5.00 Q311.83 -6.43 311.83 -8.35 Q311.83 -10.30 311.16 -11.72 Q310.49 -13.15 309.29 -13.93 Q308.09 -14.71 306.41 -14.71 Q304.78 -14.71 303.56 -13.94 Q302.35 -13.18 301.69 -11.75 Q301.03 -10.32 301.03 -8.35 Q301.03 -6.41 301.69 -4.98 Q302.35 -3.55 303.56 -2.78 Q304.78 -2.02 306.41 -2.02 Z M323.23 0.00 L323.23 -16.73 L325.77 -16.73 L334.10 -3.17 L333.53 -3.17 L333.53 -16.73 L335.95 -16.73 L335.95 0.00 L333.36 0.00 L325.10 -13.58 L325.68 -13.58 L325.68 0.00 L323.23 0.00 Z M350.81 0.29 Q348.24 0.29 346.59 -1.05 Q344.95 -2.40 344.59 -4.63 L346.97 -5.21 Q347.23 -3.58 348.29 -2.74 Q349.34 -1.90 350.88 -1.90 Q351.77 -1.90 352.45 -2.22 Q353.13 -2.54 353.54 -3.15 Q353.95 -3.77 353.95 -4.54 Q353.95 -5.35 353.51 -5.88 Q353.06 -6.41 352.26 -6.83 Q351.45 -7.25 350.33 -7.68 Q348.86 -8.23 347.82 -8.88 Q346.77 -9.53 346.21 -10.43 Q345.65 -11.33 345.65 -12.60 Q345.65 -13.90 346.28 -14.89 Q346.92 -15.89 348.07 -16.46 Q349.22 -17.04 350.73 -17.04 Q352.34 -17.04 353.60 -16.31 Q354.86 -15.58 355.61 -14.11 L353.66 -12.91 Q353.13 -13.87 352.38 -14.37 Q351.62 -14.88 350.66 -14.88 Q349.92 -14.88 349.33 -14.59 Q348.74 -14.30 348.42 -13.81 Q348.09 -13.32 348.09 -12.65 Q348.09 -11.95 348.49 -11.45 Q348.89 -10.94 349.67 -10.54 Q350.45 -10.15 351.62 -9.72 Q353.11 -9.14 354.17 -8.48 Q355.22 -7.82 355.80 -6.91 Q356.37 -6.00 356.37 -4.68 Q356.37 -3.24 355.67 -2.12 Q354.96 -1.01 353.71 -0.36 Q352.46 0.29 350.81 0.29 Z" fill="#8A94A6"/></g>
-    </svg>
+    <img class="logo stagger d1" src="synergy-logo.svg" alt="Synergy — Global IT Solutions" />
 
     <span class="badge stagger d2"><span class="dot"></span>Launching Soon</span>
 
@@ -225,8 +206,6 @@
       <a href="#" aria-label="Email" title="Email"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2.5" y="4.5" width="19" height="15" rx="2.5"/><path d="M3 6l9 6 9-6"/></svg></a>
     </div>
   </main>
-
-  <div class="grain"></div>
 
 <script>
   // ---- Notify (front-end only feedback) ----
