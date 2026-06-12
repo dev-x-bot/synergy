@@ -1,18 +1,4 @@
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Synergy — Coming Soon</title>
-<meta name="description" content="Synergy — Global IT Solutions. A smarter way to deliver secure, scalable IT. Launching soon." />
-<meta name="theme-color" content="#fbfcf8" />
-<link rel="icon" type="image/svg+xml" href="synergy-logo-v2.svg" />
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&family=Onest:wght@400;500;600&display=swap" rel="stylesheet">
-<style>
-  :root{
+:root{
     --bg:#fbfcf8;
     --bg-2:#f3f5ee;
     --gold:#FCCC01;
@@ -25,15 +11,13 @@
     --line:rgba(13,17,23,0.10);
     --card:#ffffff;
     --radius:30px;
-    --font-display:'Sora',sans-serif;
-    --font-body:'Onest',sans-serif;
   }
 
   *{margin:0;padding:0;box-sizing:border-box;}
   html,body{height:100%;}
 
   body{
-    font-family:var(--font-body);
+    font-family:var(--font-body),sans-serif;
     background:var(--bg);
     color:var(--ink);
     min-height:100vh;
@@ -109,7 +93,7 @@
 
   .badge{
     display:inline-flex;align-items:center;gap:9px;
-    font-family:var(--font-body);font-size:12.5px;font-weight:600;letter-spacing:.16em;
+    font-family:var(--font-body),sans-serif;font-size:12.5px;font-weight:600;letter-spacing:.16em;
     text-transform:uppercase;color:var(--lime-deep);
     padding:8px 16px;border-radius:100px;
     background:linear-gradient(120deg,rgba(252,204,1,.16),rgba(141,254,31,.18));
@@ -120,7 +104,7 @@
   @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(76,170,18,.5);}70%{box-shadow:0 0 0 9px rgba(76,170,18,0);}100%{box-shadow:0 0 0 0 rgba(76,170,18,0);}}
 
   h1{
-    font-family:var(--font-display);font-weight:600;
+    font-family:var(--font-display),sans-serif;font-weight:600;
     font-size:clamp(32px,5.4vw,52px);line-height:1.06;letter-spacing:-.02em;
     margin:26px 0 0;color:var(--ink);
   }
@@ -143,12 +127,12 @@
   .notify:focus-within{border-color:rgba(141,254,31,.55);box-shadow:0 0 0 4px rgba(141,254,31,.16);}
   .notify input{
     flex:1;background:transparent;border:none;outline:none;color:var(--ink);
-    font-family:var(--font-body);font-size:15px;padding:0 16px;
+    font-family:var(--font-body),sans-serif;font-size:15px;padding:0 16px;
   }
   .notify input::placeholder{color:var(--slate-dim);}
   .notify button{
     border:none;cursor:pointer;white-space:nowrap;
-    font-family:var(--font-display);font-weight:600;font-size:14.5px;color:#16210a;
+    font-family:var(--font-display),sans-serif;font-weight:600;font-size:14.5px;color:#16210a;
     padding:12px 26px;border-radius:100px;
     background:linear-gradient(120deg,var(--gold),var(--lime));
     box-shadow:0 8px 20px -8px rgba(141,254,31,.7);
@@ -175,50 +159,3 @@
     .notify input{padding:12px 16px;text-align:center;}
     .notify button{width:100%;padding:13px;}
   }
-</style>
-</head>
-<body>
-  <div class="ambient">
-    <div class="blob gold"></div>
-    <div class="blob lime"></div>
-    <div class="blob spark"></div>
-  </div>
-
-  <main class="card">
-    <img class="logo stagger d1" src="synergy-logo-v2.svg" alt="Synergy — Global IT Solutions" />
-
-    <span class="badge stagger d2"><span class="dot"></span>Launching Soon</span>
-
-    <h1 class="stagger d3">Something <span class="accent">powerful</span><br>is on its way.</h1>
-
-    <p class="sub stagger d4">We're crafting a smarter way to deliver global IT solutions — secure, scalable, and built around you. The new Synergy experience arrives shortly.</p>
-
-    <div class="notify stagger d5">
-      <input type="email" id="email" placeholder="Enter your email for early access" aria-label="Email address" />
-      <button id="notifyBtn" type="button">Notify Me</button>
-    </div>
-    <p class="note stagger d5" id="note">Be the first to know when we go live.</p>
-
-    <div class="foot stagger d6">
-      <a href="#" aria-label="LinkedIn" title="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1 4.98 2.12 4.98 3.5zM.2 8h4.6v14H.2V8zm7.5 0h4.4v1.9h.06c.61-1.16 2.1-2.38 4.32-2.38 4.62 0 5.47 3.04 5.47 7v8.48h-4.6v-7.52c0-1.79-.03-4.1-2.5-4.1-2.5 0-2.88 1.95-2.88 3.97V22H7.7V8z"/></svg></a>
-      <a href="#" aria-label="X" title="X"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.9 2H22l-7.3 8.34L23 22h-6.6l-5.18-6.78L5.3 22H2.2l7.82-8.94L1.5 2h6.78l4.68 6.2L18.9 2zm-1.16 18h1.78L7.36 3.9H5.45L17.74 20z"/></svg></a>
-      <a href="#" aria-label="GitHub" title="GitHub"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.7.5.6 5.6.6 12c0 5.1 3.3 9.4 7.9 10.9.6.1.8-.2.8-.5v-2c-3.2.7-3.9-1.4-3.9-1.4-.5-1.3-1.3-1.7-1.3-1.7-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.7 1.3 3.4 1 .1-.7.4-1.3.7-1.6-2.6-.3-5.3-1.3-5.3-5.7 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.3 1.2a11.5 11.5 0 016 0C17.3 4.6 18.3 5 18.3 5c.6 1.6.2 2.8.1 3.1.8.8 1.2 1.8 1.2 3.1 0 4.4-2.7 5.4-5.3 5.7.4.4.8 1.1.8 2.2v3.3c0 .3.2.6.8.5 4.6-1.5 7.9-5.8 7.9-10.9C23.4 5.6 18.3.5 12 .5z"/></svg></a>
-      <a href="#" aria-label="Email" title="Email"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2.5" y="4.5" width="19" height="15" rx="2.5"/><path d="M3 6l9 6 9-6"/></svg></a>
-    </div>
-  </main>
-
-<script>
-  // ---- Notify (front-end only feedback) ----
-  const btn=document.getElementById('notifyBtn'), email=document.getElementById('email'), note=document.getElementById('note');
-  function submit(){
-    const v=email.value.trim();
-    const ok=/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v);
-    if(!ok){ note.textContent='Please enter a valid email address.'; note.classList.remove('ok'); return; }
-    note.textContent="You're on the list — we'll be in touch. ✦";
-    note.classList.add('ok'); email.value=''; email.placeholder='Subscribed';
-  }
-  btn.addEventListener('click',submit);
-  email.addEventListener('keydown',e=>{ if(e.key==='Enter') submit(); });
-</script>
-</body>
-</html>
