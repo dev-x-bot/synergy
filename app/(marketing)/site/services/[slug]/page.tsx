@@ -23,5 +23,13 @@ export default async function ServiceDetail({
 }) {
   const s = getService((await params).slug);
   if (!s) notFound();
-  return <DetailPage kicker="Service" item={s} backHref="/site/services" backLabel="All services" />;
+  const isExpertise = s.kind === "expertise";
+  return (
+    <DetailPage
+      kicker={isExpertise ? "Expertise" : "Service"}
+      item={s}
+      backHref="/site/services"
+      backLabel={isExpertise ? "All expertise" : "All services"}
+    />
+  );
 }

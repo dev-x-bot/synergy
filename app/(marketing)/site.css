@@ -281,7 +281,7 @@ h1,h2,h3,h4{font-family:var(--font-display);font-weight:600;letter-spacing:-.02e
 .header.scrolled{background:rgba(251,252,248,.78);backdrop-filter:saturate(160%) blur(18px);-webkit-backdrop-filter:saturate(160%) blur(18px);border-color:var(--line-soft);box-shadow:0 8px 30px -22px rgba(13,17,23,.4);}
 .nav{display:flex;align-items:center;gap:30px;height:78px;}
 .brand{display:flex;align-items:center;flex-shrink:0;}
-.brand img{height:34px;width:auto;}
+.brand img{height:46px;width:auto;}
 .nav-links{display:flex;align-items:center;gap:4px;margin-left:auto;}
 .nav-item{position:relative;}
 .nav-link{
@@ -400,7 +400,7 @@ body.menu-open .hamburger .hb i:nth-child(3){transform:translateY(-7.5px) rotate
 .intro{background:var(--ink);color:#fff;position:relative;overflow:hidden;}
 .intro::before{content:"";position:absolute;width:40vw;height:40vw;border-radius:50%;background:radial-gradient(circle,rgba(141,254,31,.16),transparent 70%);top:-50%;right:-10%;filter:blur(40px);}
 .intro-grid{position:relative;display:grid;grid-template-columns:auto 1fr;gap:clamp(28px,5vw,72px);align-items:center;}
-.intro-grid .big{font-family:var(--font-display);font-weight:700;font-size:clamp(54px,9vw,108px);line-height:.9;background:linear-gradient(160deg,var(--gold),var(--lime));-webkit-background-clip:text;background-clip:text;color:transparent;white-space:nowrap;}
+.intro-grid .big{font-family:var(--font-slab),serif;font-weight:700;text-transform:uppercase;letter-spacing:-.01em;font-size:clamp(54px,9vw,108px);line-height:.9;background:linear-gradient(160deg,var(--gold),var(--lime));-webkit-background-clip:text;background-clip:text;color:transparent;white-space:nowrap;}
 .intro-grid p{font-size:clamp(19px,2.4vw,30px);line-height:1.4;font-family:var(--font-display);font-weight:300;letter-spacing:-.01em;color:#eef1f4;}
 .intro-grid p b{font-weight:600;color:#fff;}
 
@@ -467,10 +467,8 @@ body.menu-open .hamburger .hb i:nth-child(3){transform:translateY(-7.5px) rotate
 /* ---------- Footer ---------- */
 .footer{background:var(--ink);color:rgba(255,255,255,.7);padding:clamp(56px,7vw,86px) 0 0;}
 .foot-top{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:clamp(32px,5vw,64px);padding-bottom:54px;border-bottom:1px solid rgba(255,255,255,.10);}
-.foot-brand .fmark{display:flex;align-items:center;gap:12px;margin-bottom:20px;}
-.foot-brand .fmark .fm-s{width:40px;height:40px;border-radius:11px;display:grid;place-items:center;background:linear-gradient(135deg,var(--gold),var(--lime));color:#16210a;font-family:var(--font-display);font-weight:700;font-size:22px;}
-.foot-brand .fmark .ft{font-family:var(--font-display);font-weight:600;font-size:20px;color:#fff;line-height:1;}
-.foot-brand .fmark .ft small{display:block;font-size:10px;letter-spacing:.22em;color:rgba(255,255,255,.5);font-weight:500;margin-top:4px;}
+.foot-brand .foot-logo{display:inline-block;margin-bottom:20px;}
+.foot-brand .foot-logo img{height:48px;width:auto;}
 .foot-brand p{font-size:14.5px;line-height:1.7;max-width:330px;}
 .foot-social{display:flex;gap:10px;margin-top:24px;}
 .foot-social a{width:40px;height:40px;display:grid;place-items:center;border-radius:11px;border:1px solid rgba(255,255,255,.14);color:rgba(255,255,255,.7);transition:.2s;}
@@ -490,7 +488,7 @@ body.menu-open .hamburger .hb i:nth-child(3){transform:translateY(-7.5px) rotate
 .sub-form button svg{width:18px;height:18px;}
 
 /* offices */
-.offices{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;padding:46px 0;border-bottom:1px solid rgba(255,255,255,.10);}
+.offices{display:grid;grid-template-columns:repeat(2,minmax(220px,340px));justify-content:start;gap:48px;padding:46px 0;border-bottom:1px solid rgba(255,255,255,.10);}
 .office h5{color:#fff;font-family:var(--font-display);font-size:15px;font-weight:600;margin-bottom:12px;display:flex;align-items:center;gap:8px;}
 .office h5 .pin{width:7px;height:7px;border-radius:50%;background:var(--lime);flex-shrink:0;}
 .office p{font-size:13.5px;line-height:1.6;}
@@ -588,4 +586,7 @@ body.menu-open .hamburger .hb i:nth-child(3){transform:translateY(-7.5px) rotate
 .field input:focus,.field textarea:focus{border-color:rgba(141,254,31,.55);box-shadow:0 0 0 4px rgba(141,254,31,.16);}
 .field textarea{min-height:130px;resize:vertical;}
 .contact-info .office{margin-bottom:22px;}
+.contact-info .office h5{color:var(--ink);}
+.contact-info .office p{color:var(--slate);}
+.contact-info .office a{color:var(--lime-deep);font-weight:600;}
 @media(max-width:820px){.contact-grid{grid-template-columns:1fr;gap:28px;}}

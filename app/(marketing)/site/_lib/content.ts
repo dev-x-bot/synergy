@@ -7,11 +7,14 @@ export type Item = {
   tagline: string;
   intro: string;
   points: { h: string; p: string }[];
+  // services are grouped in the nav as either "service" or "expertise"
+  kind?: "service" | "expertise";
 };
 
 export const services: Item[] = [
   {
     slug: "project-services",
+    kind: "service",
     title: "Project Services",
     tagline: "Outcome-owned delivery, end to end.",
     intro:
@@ -24,6 +27,7 @@ export const services: Item[] = [
   },
   {
     slug: "captive-offshoring",
+    kind: "service",
     title: "Captive Offshoring",
     tagline: "Your own offshore team, stood up fast.",
     intro:
@@ -36,6 +40,7 @@ export const services: Item[] = [
   },
   {
     slug: "staffing-services",
+    kind: "service",
     title: "Staffing Services",
     tagline: "The right specialist, exactly when you need them.",
     intro:
@@ -48,6 +53,7 @@ export const services: Item[] = [
   },
   {
     slug: "ai-ml",
+    kind: "expertise",
     title: "AI / ML",
     tagline: "Turn data into decisions.",
     intro:
@@ -60,6 +66,7 @@ export const services: Item[] = [
   },
   {
     slug: "digital-transformation",
+    kind: "expertise",
     title: "Digital Transformation",
     tagline: "Reinvent products and operations around people.",
     intro:
@@ -72,6 +79,7 @@ export const services: Item[] = [
   },
   {
     slug: "cyber-security",
+    kind: "expertise",
     title: "Cyber Security",
     tagline: "Protect what matters most.",
     intro:
@@ -84,6 +92,7 @@ export const services: Item[] = [
   },
   {
     slug: "cloud-enablement",
+    kind: "expertise",
     title: "Cloud Enablement",
     tagline: "Faster, leaner and genuinely yours.",
     intro:
@@ -96,6 +105,7 @@ export const services: Item[] = [
   },
   {
     slug: "emerging-talent",
+    kind: "expertise",
     title: "Emerging Talent",
     tagline: "Trained, screened, ready from day one.",
     intro:
@@ -181,8 +191,6 @@ export const caseStudies: CaseStudy[] = [
 export const offices = [
   { city: "Austin, USA", addr: "WeWork Office Spaces, 600 Congress Ave, Austin, TX 78701, United States.", link: "Get directions →" },
   { city: "Hyderabad, India", addr: "12th Floor, Western Aqua, Whitefields, Hitech City, Hyderabad 500081.", link: "+91 96493 45789" },
-  { city: "Bangalore, India", addr: "World Trade Center, 22nd Floor, 26/1 Dr Rajkumar Rd, Malleshwaram, Bangalore 560055.", link: "+91 96493 45789" },
-  { city: "Pune, India", addr: "Regus Tech Center, 5th Floor, Plot 30, Rajiv Gandhi MIDC Rd, Hinjewadi, Pune 411057.", link: "+91 96493 45789" },
 ];
 
 export const getService = (slug: string) => services.find((s) => s.slug === slug);

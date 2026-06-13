@@ -1,5 +1,6 @@
 import Link from "next/link";
 import type { Item } from "../_lib/content";
+import { Check, ArrowRight } from "../_lib/icons";
 import CtaBand from "./CtaBand";
 
 export default function DetailPage({
@@ -18,9 +19,7 @@ export default function DetailPage({
       <section className="section">
         <div className="wrap">
           <Link className="back-link" href={backHref}>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2">
-              <path d="M5 12h14M13 6l6 6-6 6" />
-            </svg>
+            <ArrowRight />
             {backLabel}
           </Link>
           <div className="section-head">
@@ -35,11 +34,7 @@ export default function DetailPage({
           <div className="exp-grid">
             {item.points.map((pt, i) => (
               <article className={`exp-card reveal${i % 3 ? " d" + (i % 3) : ""}`} key={pt.h}>
-                <div className="exp-ic">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7">
-                    <path d="M20 6L9 17l-5-5" />
-                  </svg>
-                </div>
+                <div className="exp-ic"><Check strokeWidth={1.8} /></div>
                 <h3>{pt.h}</h3>
                 <p>{pt.p}</p>
               </article>

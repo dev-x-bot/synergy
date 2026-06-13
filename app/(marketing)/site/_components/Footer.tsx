@@ -8,10 +8,10 @@ export default function Footer() {
       <div className="wrap">
         <div className="foot-top">
           <div className="foot-brand">
-            <div className="fmark">
-              <span className="fm-s">S</span>
-              <span className="ft">Synergy<small>GLOBAL IT SOLUTIONS</small></span>
-            </div>
+            <Link className="foot-logo" href="/site" aria-label="Synergy — Global IT Solutions">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src="/site/logo-full-dark.svg" alt="Synergy — Global IT Solutions" />
+            </Link>
             <p>
               We deliver top talent by thinking globally and acting locally —
               secure, scalable IT built around the way you work.

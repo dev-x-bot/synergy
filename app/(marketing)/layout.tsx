@@ -1,5 +1,14 @@
 import type { Metadata, Viewport } from "next";
+import { Roboto_Slab } from "next/font/google";
 import "./site.css";
+
+// Brand wordmark font ("Synergy") — slab serif matching the logo.
+const robotoSlab = Roboto_Slab({
+  subsets: ["latin"],
+  weight: ["600", "700"],
+  variable: "--font-slab",
+  display: "swap",
+});
 
 export const metadata: Metadata = {
   title: "Synergy — Global IT Solutions",
@@ -16,7 +25,7 @@ export default function MarketingRootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en">
+    <html lang="en" className={robotoSlab.variable}>
       <body>{children}</body>
     </html>
   );
