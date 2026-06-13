@@ -1,7 +1,6 @@
 import Link from "next/link";
-import ImgSlot from "./_components/ImgSlot";
 import { caseStudies } from "./_lib/content";
-import { serviceIcons, industryIcons, ArrowRight } from "./_lib/icons";
+import { serviceIcons, industryIcons, ArrowRight, BadgeCheck } from "./_lib/icons";
 
 const expertise = [
   { h: "AI / ML", href: "/site/services/ai-ml", Icon: serviceIcons["ai-ml"], p: "Production-grade machine learning, generative AI and intelligent automation that turn data into decisions." },
@@ -37,9 +36,10 @@ export default function Home() {
           </div>
 
           <div className="hero-visual reveal d2">
-            <ImgSlot />
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img className="hero-img" src="/site/hero.svg" alt="Global delivery and collaborative teams" />
             <div className="hero-card">
-              <span className="hc-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M22 11.08V12a10 10 0 11-5.93-9.14" /><path d="M22 4L12 14.01l-3-3" /></svg></span>
+              <span className="hc-ic"><BadgeCheck strokeWidth={2} /></span>
               <div><div className="hc-num">98%</div><div className="hc-lbl">Placement success rate</div></div>
             </div>
             <div className="hero-tag"><span className="pin"></span>Global delivery, local presence</div>
@@ -118,7 +118,8 @@ export default function Home() {
               <article className={`case-card reveal${i ? " d" + i : ""}`} key={c.slug}>
                 <div className="case-media">
                   <span className="case-tag">{c.tag}</span>
-                  <ImgSlot />
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img src={c.image} alt={c.title} />
                 </div>
                 <div className="case-body">
                   <h3>{c.title}</h3>

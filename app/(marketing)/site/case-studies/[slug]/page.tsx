@@ -2,7 +2,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { caseStudies } from "../../_lib/content";
-import ImgSlot from "../../_components/ImgSlot";
+import { ArrowRight } from "../../_lib/icons";
 import CtaBand from "../../_components/CtaBand";
 
 export function generateStaticParams() {
@@ -32,7 +32,7 @@ export default async function CaseStudyDetail({
       <section className="section">
         <div className="wrap">
           <Link className="back-link" href="/site/case-studies">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2"><path d="M5 12h14M13 6l6 6-6 6" /></svg>
+            <ArrowRight />
             All case studies
           </Link>
           <div className="section-head">
@@ -40,8 +40,9 @@ export default async function CaseStudyDetail({
             <h1 className="reveal d1">{c.title}</h1>
             <p className="reveal d2">{c.summary}</p>
           </div>
-          <div className="reveal d2" style={{ marginTop: 28 }}>
-            <ImgSlot className="" />
+          <div className="cs-hero reveal d2" style={{ marginTop: 28 }}>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src={c.image} alt={c.title} />
           </div>
           <div className="prose reveal d3" style={{ marginTop: 28 }}>
             <h2>The challenge</h2>

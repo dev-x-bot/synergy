@@ -18,6 +18,7 @@ export {
   ChevronDown,
   ArrowRight,
   Check,
+  BadgeCheck,
   MapPin,
 } from "lucide-react";
 

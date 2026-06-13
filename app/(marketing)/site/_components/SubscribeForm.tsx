@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { ArrowRight } from "../_lib/icons";
 
 export default function SubscribeForm() {
   const [value, setValue] = useState("");
@@ -26,9 +27,7 @@ export default function SubscribeForm() {
         required
       />
       <button type="submit" aria-label="Subscribe">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2">
-          <path d="M5 12h14M13 6l6 6-6 6" />
-        </svg>
+        <ArrowRight />
       </button>
     </form>
   );

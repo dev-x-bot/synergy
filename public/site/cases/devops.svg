@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 520" width="800" height="520" role="img" aria-label="DevOps automation">
+  <defs>
+    <linearGradient id="dbg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0c1b2e"/><stop offset="1" stop-color="#16324c"/>
+    </linearGradient>
+    <linearGradient id="dacc" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#FCCC01"/><stop offset="1" stop-color="#8DFE1F"/>
+    </linearGradient>
+    <radialGradient id="dglow" cx="50%" cy="50%" r="50%">
+      <stop offset="0" stop-color="#8DFE1F" stop-opacity=".55"/><stop offset="1" stop-color="#8DFE1F" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="dgrid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M40 0H0V40" fill="none" stroke="#ffffff" stroke-opacity=".05" stroke-width="1"/>
+    </pattern>
+  </defs>
+  <rect width="800" height="520" fill="url(#dbg)"/>
+  <rect width="800" height="520" fill="url(#dgrid)"/>
+  <circle cx="600" cy="150" r="200" fill="url(#dglow)"/>
+
+  <!-- CI/CD pipeline -->
+  <g transform="translate(90,140)">
+    <line x1="20" y1="40" x2="580" y2="40" stroke="#ffffff" stroke-opacity=".15" stroke-width="3"/>
+    <line x1="20" y1="40" x2="430" y2="40" stroke="url(#dacc)" stroke-width="4" stroke-linecap="round"/>
+    <!-- stages -->
+    <g>
+      <circle cx="20" cy="40" r="26" fill="#11283f" stroke="url(#dacc)" stroke-width="3"/>
+      <path d="M8 40l8 8 16-18" fill="none" stroke="#8DFE1F" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+    </g>
+    <g>
+      <circle cx="160" cy="40" r="26" fill="#11283f" stroke="url(#dacc)" stroke-width="3"/>
+      <path d="M148 40l8 8 16-18" fill="none" stroke="#8DFE1F" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+    </g>
+    <g>
+      <circle cx="300" cy="40" r="26" fill="#11283f" stroke="url(#dacc)" stroke-width="3"/>
+      <path d="M288 40l8 8 16-18" fill="none" stroke="#8DFE1F" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+    </g>
+    <!-- active packet -->
+    <circle cx="430" cy="40" r="14" fill="#8DFE1F"/>
+    <circle cx="430" cy="40" r="26" fill="none" stroke="#8DFE1F" stroke-opacity=".5" stroke-width="2"/>
+    <!-- pending -->
+    <circle cx="580" cy="40" r="26" fill="#11283f" stroke="#ffffff" stroke-opacity=".25" stroke-width="3"/>
+    <circle cx="580" cy="40" r="6" fill="#ffffff" fill-opacity=".4"/>
+  </g>
+
+  <!-- stacked containers -->
+  <g transform="translate(120,300)">
+    <rect x="0" y="60" width="170" height="46" rx="9" fill="#0f2236" stroke="#FCCC01" stroke-width="2.5"/>
+    <rect x="22" y="8" width="170" height="46" rx="9" fill="#0f2236" stroke="#8DFE1F" stroke-width="2.5"/>
+    <rect x="44" y="-44" width="170" height="46" rx="9" fill="#13314b" stroke="#ffffff" stroke-opacity=".35" stroke-width="2.5"/>
+    <circle cx="20" cy="83" r="4" fill="#FCCC01"/><circle cx="42" cy="31" r="4" fill="#8DFE1F"/><circle cx="64" cy="-21" r="4" fill="#fff" fill-opacity=".6"/>
+  </g>
+
+  <!-- code / branch chip -->
+  <g transform="translate(520,330)">
+    <rect width="170" height="120" rx="16" fill="#ffffff" fill-opacity=".06" stroke="#ffffff" stroke-opacity=".12"/>
+    <circle cx="34" cy="40" r="9" fill="none" stroke="#8DFE1F" stroke-width="3"/>
+    <circle cx="34" cy="92" r="9" fill="none" stroke="#FCCC01" stroke-width="3"/>
+    <circle cx="120" cy="66" r="9" fill="none" stroke="#8DFE1F" stroke-width="3"/>
+    <path d="M34 49v18a14 14 0 0014 14h63M34 83V49" fill="none" stroke="#ffffff" stroke-opacity=".4" stroke-width="3"/>
+    <path d="M111 66h-2" stroke="#8DFE1F" stroke-width="3"/>
+  </g>
+</svg>
