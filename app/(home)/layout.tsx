@@ -1,6 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Sora, Onest } from "next/font/google";
-import "./globals.css";
+import "./home.css";
 
 const sora = Sora({
   subsets: ["latin"],
