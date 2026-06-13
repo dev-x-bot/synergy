@@ -24,16 +24,14 @@ export default function CareersPage() {
             <p className="reveal d2">We&apos;re always looking for curious, kind and capable people. Explore open roles across our global hubs.</p>
           </div>
 
-          <div className="reveal d2" style={{ marginTop: 44 }}>
+          <div className="role-list reveal d2">
             {roles.map((r) => (
-              <div className="cta-box" key={r.title} style={{ marginBottom: 14 }}>
-                <div className="ct">
-                  <h2 style={{ fontSize: 22 }}>{r.title}</h2>
+              <div className="role-card" key={r.title}>
+                <div>
+                  <h3>{r.title}</h3>
                   <p>{r.team} · {r.loc}</p>
                 </div>
-                <div className="ca">
-                  <Link className="btn btn-dark" href="/site/contact">Apply<ArrowRight /></Link>
-                </div>
+                <Link className="btn btn-dark" href="/site/contact">Apply<ArrowRight /></Link>
               </div>
             ))}
           </div>

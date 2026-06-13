@@ -2,6 +2,8 @@ import Link from "next/link";
 import { caseStudies } from "./_lib/content";
 import { serviceIcons, industryIcons, ArrowRight, BadgeCheck } from "./_lib/icons";
 
+const STRIP_NAMES = ["Banking", "Healthcare", "Retail", "Logistics", "Cloud", "Insurance", "Manufacturing", "Telecom", "Public Sector"];
+
 const expertise = [
   { h: "AI / ML", href: "/site/services/ai-ml", Icon: serviceIcons["ai-ml"], p: "Production-grade machine learning, generative AI and intelligent automation that turn data into decisions." },
   { h: "Banking & Capital Markets", href: "/site/industries/banking-capital-markets", Icon: industryIcons["banking-capital-markets"], p: "Resilient, compliant platforms for the institutions that keep global capital moving safely." },
@@ -21,41 +23,41 @@ export default function Home() {
           <div className="blob lime"></div>
           <div className="grid"></div>
         </div>
-        <div className="wrap hero-grid">
+        <div className="wrap">
           <div className="hero-copy">
-            <h1 className="reveal d1">We deliver top talent by <span className="gradient-text">thinking globally</span> and acting locally.</h1>
-            <p className="lead reveal d2">Whether you need a highly skilled specialist or a practiced full-time team, Synergy makes it happen — secure, scalable IT delivered around the way you work.</p>
-            <div className="hero-actions reveal d3">
-              <Link className="btn btn-primary" href="/site/contact">Find Talent Now<ArrowRight /></Link>
-              <Link className="btn btn-ghost" href="/site/services">Explore Expertise</Link>
-            </div>
-            <div className="hero-trust reveal d4">
-              <div className="avatars"><span>AI</span><span>BK</span><span>CL</span><span>DX</span></div>
-              <span>Trusted across <b>4 global delivery hubs</b> and 40+ enterprise teams.</span>
-            </div>
+          <h1 className="reveal d1">We deliver top talent by <span className="gradient-text">thinking globally</span> and acting locally.</h1>
+          <p className="lead reveal d2">Whether you need a highly skilled specialist or a practiced full-time team, Synergy makes it happen — secure, scalable IT delivered around the way you work.</p>
+          <div className="hero-actions reveal d3">
+            <Link className="btn btn-primary" href="/site/contact">Find Talent Now<ArrowRight /></Link>
+            <Link className="btn btn-ghost" href="/site/services">Explore Expertise</Link>
           </div>
-
-          <div className="hero-visual reveal d2">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img className="hero-img" src="/site/hero.svg" alt="Global delivery and collaborative teams" />
-            <div className="hero-card">
-              <span className="hc-ic"><BadgeCheck strokeWidth={2} /></span>
-              <div><div className="hc-num">98%</div><div className="hc-lbl">Placement success rate</div></div>
-            </div>
-            <div className="hero-tag"><span className="pin"></span>Global delivery, local presence</div>
+          <div className="hero-badges reveal d4">
+            <span className="hero-badge">
+              <span className="hb-ic"><BadgeCheck strokeWidth={2.2} /></span>
+              <span><b>98%</b> placement success rate</span>
+            </span>
+            <span className="hero-badge">
+              <span className="hb-dot"></span>Global delivery, local presence
+            </span>
+          </div>
+          <div className="hero-trust reveal d5">
+            <div className="avatars"><span>AI</span><span>BK</span><span>CL</span><span>DX</span></div>
+            <span>Trusted across <b>4 global delivery hubs</b> and 40+ enterprise teams.</span>
+          </div>
           </div>
         </div>
       </section>
 
-      {/* LOGO STRIP */}
+      {/* LOGO STRIP — marquee slider */}
       <div className="strip">
         <div className="wrap strip-inner">
           <span className="lbl">Expertise that powers</span>
-          <span className="name">Banking</span>
-          <span className="name">Healthcare</span>
-          <span className="name">Retail</span>
-          <span className="name">Logistics</span>
-          <span className="name">Cloud</span>
+          <div className="marquee">
+            <div className="marquee-track" aria-hidden="false">
+              {STRIP_NAMES.map((n) => <span className="name" key={n}>{n}</span>)}
+              {STRIP_NAMES.map((n) => <span className="name" key={n + "-2"} aria-hidden="true">{n}</span>)}
+            </div>
+          </div>
         </div>
       </div>
 
