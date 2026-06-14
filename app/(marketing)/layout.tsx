@@ -39,12 +39,40 @@ export const viewport: Viewport = {
   themeColor: "#fbfcf8",
 };
 
-export default function MarketingRootLayout({
+export default async function MarketingRootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
+  const m = await getSiteMeta();
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": `${m.siteUrl}/#organization`,
+        name: m.name,
+        url: `${m.siteUrl}${m.basePath}`,
+        email: m.email,
+        description: m.description,
+        logo: `${m.siteUrl}/site/logo-full.svg`,
+      },
+      {
+        "@type": "WebSite",
+        "@id": `${m.siteUrl}/#website`,
+        url: `${m.siteUrl}${m.basePath}`,
+        name: m.name,
+        publisher: { "@id": `${m.siteUrl}/#organization` },
+      },
+    ],
+  };
   return (
     <html lang="en" className={robotoSlab.variable}>
-      <body>{children}</body>
+      <body>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+        {children}
+      </body>
     </html>
   );
 }

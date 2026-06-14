@@ -1,7 +1,12 @@
 import Link from "next/link";
+import type { Metadata } from "next";
 import { getFeatured, getStripNames, getCaseStudies } from "./_lib/content";
 import { Icon, ArrowRight, BadgeCheck } from "./_lib/icons";
 import StatsSection from "./_components/StatsSection";
+
+export const metadata: Metadata = {
+  title: "Synergy — Global IT Solutions, Talent, Cloud & AI/ML",
+};
 
 export default async function Home() {
   const [featured, stripNames, caseStudies] = await Promise.all([
