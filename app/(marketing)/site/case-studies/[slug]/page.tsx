@@ -1,12 +1,12 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
-import { caseStudies } from "../../_lib/content";
+import { getCaseStudies, getCaseStudyBySlug } from "../../_lib/content";
 import { ArrowRight } from "../../_lib/icons";
 import CtaBand from "../../_components/CtaBand";
 
-export function generateStaticParams() {
-  return caseStudies.map((c) => ({ slug: c.slug }));
+export async function generateStaticParams() {
+  return (await getCaseStudies()).map((c) => ({ slug: c.slug }));
 }
 
 export async function generateMetadata({
@@ -14,8 +14,7 @@ export async function generateMetadata({
 }: {
   params: Promise<{ slug: string }>;
 }): Promise<Metadata> {
-  const { slug } = await params;
-  const c = caseStudies.find((x) => x.slug === slug);
+  const c = await getCaseStudyBySlug((await params).slug);
   return { title: c ? `${c.title} — Synergy` : "Synergy" };
 }
 
@@ -24,8 +23,7 @@ export default async function CaseStudyDetail({
 }: {
   params: Promise<{ slug: string }>;
 }) {
-  const { slug } = await params;
-  const c = caseStudies.find((x) => x.slug === slug);
+  const c = await getCaseStudyBySlug((await params).slug);
   if (!c) notFound();
   return (
     <>

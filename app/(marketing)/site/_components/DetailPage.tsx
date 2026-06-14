@@ -1,6 +1,6 @@
 import Link from "next/link";
-import type { Item } from "../_lib/content";
-import { ArrowRight } from "../_lib/icons";
+import type { Item } from "../_lib/types";
+import { Icon, ArrowRight } from "../_lib/icons";
 import CtaBand from "./CtaBand";
 
 export default function DetailPage({
@@ -34,7 +34,7 @@ export default function DetailPage({
           <div className="exp-grid">
             {item.points.map((pt, i) => (
               <article className={`exp-card reveal${i % 3 ? " d" + (i % 3) : ""}`} key={pt.h}>
-                <div className="exp-ic"><pt.icon strokeWidth={1.7} /></div>
+                <div className="exp-ic"><Icon name={pt.icon} strokeWidth={1.7} /></div>
                 <h3>{pt.h}</h3>
                 <p>{pt.p}</p>
               </article>

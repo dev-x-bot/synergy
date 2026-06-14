@@ -1,12 +1,13 @@
 import Link from "next/link";
 import type { Metadata } from "next";
-import { caseStudies } from "../_lib/content";
+import { getCaseStudies } from "../_lib/content";
 import { ArrowRight } from "../_lib/icons";
 import CtaBand from "../_components/CtaBand";
 
 export const metadata: Metadata = { title: "Case Studies — Synergy" };
 
-export default function CaseStudiesPage() {
+export default async function CaseStudiesPage() {
+  const caseStudies = await getCaseStudies();
   return (
     <>
       <section className="section">

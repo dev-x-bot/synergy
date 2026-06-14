@@ -1,12 +1,10 @@
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
-import { services, getService } from "../../_lib/content";
+import { getServices, getServiceBySlug } from "../../_lib/content";
 import DetailPage from "../../_components/DetailPage";
 
-export function generateStaticParams() {
-  return services
-    .filter((s) => s.kind !== "expertise")
-    .map((s) => ({ slug: s.slug }));
+export async function generateStaticParams() {
+  return (await getServices()).map((s) => ({ slug: s.slug }));
 }
 
 export async function generateMetadata({
@@ -14,7 +12,7 @@ export async function generateMetadata({
 }: {
   params: Promise<{ slug: string }>;
 }): Promise<Metadata> {
-  const s = getService((await params).slug);
+  const s = await getServiceBySlug((await params).slug);
   return { title: s ? `${s.title} — Synergy` : "Synergy" };
 }
 
@@ -23,7 +21,7 @@ export default async function ServiceDetail({
 }: {
   params: Promise<{ slug: string }>;
 }) {
-  const s = getService((await params).slug);
-  if (!s || s.kind === "expertise") notFound();
+  const s = await getServiceBySlug((await params).slug);
+  if (!s) notFound();
   return <DetailPage kicker="Service" item={s} backHref="/site/services" backLabel="All services" />;
 }

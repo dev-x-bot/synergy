@@ -1,0 +1,23 @@
+[
+  {
+    "slug": "shipping-devops-automation",
+    "tag": "DevOps",
+    "title": "Powering shipping operations through DevOps automation",
+    "summary": "Automated pipelines cut release cycles from weeks to hours for a global shipping operator.",
+    "image": "/site/cases/devops.svg"
+  },
+  {
+    "slug": "retail-personalized-shopping",
+    "tag": "Digital Transformation",
+    "title": "Revolutionizing personalized shopping through digital transformation",
+    "summary": "A unified data layer lifted conversion and re-imagined the journey for a national retailer.",
+    "image": "/site/cases/retail.svg"
+  },
+  {
+    "slug": "banking-cloud-migration",
+    "tag": "Banking",
+    "title": "Streamlining operations through cloud migration",
+    "summary": "A large bank moved core workflows to the cloud, slashing cost and unlocking new agility.",
+    "image": "/site/cases/banking.svg"
+  }
+]

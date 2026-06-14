@@ -1,0 +1,38 @@
+[
+  {
+    "slug": "banking-capital-markets",
+    "title": "Banking & Capital Markets",
+    "tagline": "Resilient, compliant platforms for global capital.",
+    "icon": "Landmark",
+    "intro": "We build secure, regulated platforms for the institutions that keep capital moving — from core modernization to real-time risk.",
+    "points": [
+      { "h": "Core modernization", "p": "Migrate and modernize core systems without disrupting operations.", "icon": "RefreshCw" },
+      { "h": "Risk & compliance", "p": "Real-time controls and reporting built for scrutiny.", "icon": "ShieldCheck" },
+      { "h": "Digital banking", "p": "Customer experiences that are fast, secure and trusted.", "icon": "Smartphone" }
+    ]
+  },
+  {
+    "slug": "healthcare",
+    "title": "Healthcare",
+    "tagline": "Technology that improves outcomes.",
+    "icon": "HeartPulse",
+    "intro": "Secure, interoperable systems that help providers and payers deliver better care while protecting sensitive data.",
+    "points": [
+      { "h": "Interoperability", "p": "Connected data across systems and standards (HL7/FHIR).", "icon": "Network" },
+      { "h": "Patient experience", "p": "Digital front doors that simplify access to care.", "icon": "HeartPulse" },
+      { "h": "Data & analytics", "p": "Insight that supports better, faster clinical decisions.", "icon": "BarChart3" }
+    ]
+  },
+  {
+    "slug": "retail",
+    "title": "Retail",
+    "tagline": "Personalized commerce at scale.",
+    "icon": "ShoppingBag",
+    "intro": "Unified data and modern commerce platforms that lift conversion and re-imagine the customer journey across channels.",
+    "points": [
+      { "h": "Unified commerce", "p": "Seamless experiences across web, app and store.", "icon": "ShoppingCart" },
+      { "h": "Personalization", "p": "Data-driven journeys that grow basket and loyalty.", "icon": "Sparkles" },
+      { "h": "Supply chain", "p": "Visibility and automation from warehouse to doorstep.", "icon": "Truck" }
+    ]
+  }
+]

@@ -1,11 +1,13 @@
 import Link from "next/link";
-import { services, industries } from "../_lib/content";
-import { serviceIcons, industryIcons, ChevronDown, ArrowRight } from "../_lib/icons";
+import { getServices, getExpertise, getIndustries } from "../_lib/content";
+import { Icon, ChevronDown, ArrowRight } from "../_lib/icons";
 
-const svcMain = services.filter((s) => s.kind !== "expertise");
-const svcExpertise = services.filter((s) => s.kind === "expertise");
-
-export default function Header() {
+export default async function Header() {
+  const [svcMain, svcExpertise, industries] = await Promise.all([
+    getServices(),
+    getExpertise(),
+    getIndustries(),
+  ]);
   return (
     <>
       <header className="header">
@@ -23,42 +25,33 @@ export default function Header() {
             <div className="nav-item">
               <Link className="nav-link" href="/site/industries">Industries<ChevronDown className="chev" /></Link>
               <div className="dropdown">
-                {industries.map((i) => {
-                  const Icon = industryIcons[i.slug];
-                  return (
-                    <Link key={i.slug} href={`/site/industries/${i.slug}`}>
-                      <span className="di"><Icon strokeWidth={1.8} /></span>{i.title}
-                    </Link>
-                  );
-                })}
+                {industries.map((i) => (
+                  <Link key={i.slug} href={`/site/industries/${i.slug}`}>
+                    <span className="di"><Icon name={i.icon} strokeWidth={1.8} /></span>{i.title}
+                  </Link>
+                ))}
               </div>
             </div>
 
             <div className="nav-item">
               <Link className="nav-link" href="/site/services">Services<ChevronDown className="chev" /></Link>
               <div className="dropdown">
-                {svcMain.map((s) => {
-                  const Icon = serviceIcons[s.slug];
-                  return (
-                    <Link key={s.slug} href={`/site/services/${s.slug}`}>
-                      <span className="di"><Icon strokeWidth={1.8} /></span>{s.title}
-                    </Link>
-                  );
-                })}
+                {svcMain.map((s) => (
+                  <Link key={s.slug} href={`/site/services/${s.slug}`}>
+                    <span className="di"><Icon name={s.icon} strokeWidth={1.8} /></span>{s.title}
+                  </Link>
+                ))}
               </div>
             </div>
 
             <div className="nav-item">
               <Link className="nav-link" href="/site/expertise">Expertise<ChevronDown className="chev" /></Link>
               <div className="dropdown">
-                {svcExpertise.map((s) => {
-                  const Icon = serviceIcons[s.slug];
-                  return (
-                    <Link key={s.slug} href={`/site/expertise/${s.slug}`}>
-                      <span className="di"><Icon strokeWidth={1.8} /></span>{s.title}
-                    </Link>
-                  );
-                })}
+                {svcExpertise.map((s) => (
+                  <Link key={s.slug} href={`/site/expertise/${s.slug}`}>
+                    <span className="di"><Icon name={s.icon} strokeWidth={1.8} /></span>{s.title}
+                  </Link>
+                ))}
               </div>
             </div>
 

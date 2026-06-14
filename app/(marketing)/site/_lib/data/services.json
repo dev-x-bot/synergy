@@ -1,0 +1,106 @@
+[
+  {
+    "slug": "project-services",
+    "kind": "service",
+    "title": "Project Services",
+    "tagline": "Outcome-owned delivery, end to end.",
+    "icon": "ListChecks",
+    "intro": "When you need a result rather than a resource, our project teams take full ownership — scoping, building and shipping against clear milestones and SLAs.",
+    "points": [
+      { "h": "Managed delivery", "p": "Dedicated pods that own scope, timeline and quality from kickoff to launch.", "icon": "Workflow" },
+      { "h": "Fixed-scope builds", "p": "Predictable cost and milestones for well-defined initiatives.", "icon": "Target" },
+      { "h": "Modernization", "p": "Re-platforming and re-architecting legacy systems with zero-drama cutovers.", "icon": "RefreshCw" }
+    ]
+  },
+  {
+    "slug": "captive-offshoring",
+    "kind": "service",
+    "title": "Captive Offshoring",
+    "tagline": "Your own offshore team, stood up fast.",
+    "icon": "Globe2",
+    "intro": "Build a dedicated global capability center without the overhead. We assemble, house and operate your offshore team while you keep full control.",
+    "points": [
+      { "h": "Build-operate-transfer", "p": "Stand up a team now, take ownership on your timeline.", "icon": "Repeat" },
+      { "h": "Talent + infrastructure", "p": "Hiring, workspace, security and compliance handled end to end.", "icon": "Building2" },
+      { "h": "Cost efficiency", "p": "Global delivery economics with local accountability.", "icon": "PiggyBank" }
+    ]
+  },
+  {
+    "slug": "staffing-services",
+    "kind": "service",
+    "title": "Staffing Services",
+    "tagline": "The right specialist, exactly when you need them.",
+    "icon": "Users",
+    "intro": "From a single hard-to-find expert to a full squad, we place screened, role-ready talent that plugs straight into your team and roadmap.",
+    "points": [
+      { "h": "Contract & contract-to-hire", "p": "Flexible engagement models that scale up or down with demand.", "icon": "Briefcase" },
+      { "h": "Direct placement", "p": "Permanent hires sourced, vetted and matched to your culture.", "icon": "UserCheck" },
+      { "h": "Rapid ramp", "p": "Pre-screened benches mean shortlists in days, not weeks.", "icon": "Zap" }
+    ]
+  },
+  {
+    "slug": "ai-ml",
+    "kind": "expertise",
+    "title": "AI / ML",
+    "tagline": "Turn data into decisions.",
+    "icon": "Cpu",
+    "intro": "Production-grade machine learning, generative AI and intelligent automation — built to ship, monitor and scale, not just to demo.",
+    "points": [
+      { "h": "Generative AI", "p": "RAG, copilots and agents grounded in your data, with guardrails.", "icon": "Sparkles" },
+      { "h": "ML engineering", "p": "Pipelines, MLOps and monitoring that keep models healthy in production.", "icon": "GitBranch" },
+      { "h": "Automation", "p": "Document, decision and workflow automation that compounds over time.", "icon": "Bot" }
+    ]
+  },
+  {
+    "slug": "digital-transformation",
+    "kind": "expertise",
+    "title": "Digital Transformation",
+    "tagline": "Reinvent products and operations around people.",
+    "icon": "TrendingUp",
+    "intro": "End-to-end reinvention of how you build, sell and serve — designed around the people who use your products every day.",
+    "points": [
+      { "h": "Experience design", "p": "Research-led product and service design that moves real metrics.", "icon": "PenTool" },
+      { "h": "Process reinvention", "p": "Streamline operations with automation and unified data.", "icon": "Workflow" },
+      { "h": "Platform modernization", "p": "Composable, API-first foundations built to evolve.", "icon": "Layers" }
+    ]
+  },
+  {
+    "slug": "cyber-security",
+    "kind": "expertise",
+    "title": "Cyber Security",
+    "tagline": "Protect what matters most.",
+    "icon": "ShieldCheck",
+    "intro": "Zero-trust architecture, threat detection and governance that protect your customers, your data and your reputation.",
+    "points": [
+      { "h": "Zero-trust architecture", "p": "Identity-first security designed for distributed teams.", "icon": "Lock" },
+      { "h": "Threat detection & response", "p": "Continuous monitoring with rapid containment.", "icon": "Radar" },
+      { "h": "Governance & compliance", "p": "Frameworks and controls mapped to your obligations.", "icon": "FileCheck" }
+    ]
+  },
+  {
+    "slug": "cloud-enablement",
+    "kind": "expertise",
+    "title": "Cloud Enablement",
+    "tagline": "Faster, leaner and genuinely yours.",
+    "icon": "Cloud",
+    "intro": "Migration, modernization and FinOps that make the cloud work for you — resilient, cost-aware and ready to scale.",
+    "points": [
+      { "h": "Migration", "p": "Pragmatic, low-risk moves to AWS, Azure and GCP.", "icon": "CloudUpload" },
+      { "h": "Modernization", "p": "Containers, serverless and IaC for speed and resilience.", "icon": "Boxes" },
+      { "h": "FinOps", "p": "Visibility and controls that keep cloud spend honest.", "icon": "Wallet" }
+    ]
+  },
+  {
+    "slug": "emerging-talent",
+    "kind": "expertise",
+    "title": "Emerging Talent",
+    "tagline": "Trained, screened, ready from day one.",
+    "icon": "GraduationCap",
+    "intro": "A pipeline of mentored specialists — assessed and upskilled on modern stacks — ready to plug into your roadmap immediately.",
+    "points": [
+      { "h": "Academy model", "p": "Role-specific training aligned to your tech stack.", "icon": "BookOpen" },
+      { "h": "Screened & mentored", "p": "Assessed for skill and attitude, supported as they ramp.", "icon": "UserCheck" },
+      { "h": "Build your bench", "p": "A sustainable pipeline for long-term capacity.", "icon": "Users" }
+    ]
+  }
+]

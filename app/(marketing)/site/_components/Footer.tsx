@@ -1,8 +1,9 @@
 import Link from "next/link";
-import { offices } from "../_lib/content";
+import { getOffices, getFooterLinks } from "../_lib/content";
 import SubscribeForm from "./SubscribeForm";
 
-export default function Footer() {
+export default async function Footer() {
+  const [offices, footerLinks] = await Promise.all([getOffices(), getFooterLinks()]);
   return (
     <footer className="footer" id="contact">
       <div className="wrap">
@@ -26,12 +27,9 @@ export default function Footer() {
           <div className="foot-col">
             <h4>Useful Links</h4>
             <ul>
-              <li><Link href="/site/expertise/ai-ml">AI / ML</Link></li>
-              <li><Link href="/site/industries/banking-capital-markets">Banking</Link></li>
-              <li><Link href="/site/expertise/cloud-enablement">Cloud Solutions</Link></li>
-              <li><Link href="/site/expertise/digital-transformation">Digital Transformation</Link></li>
-              <li><Link href="/site/case-studies">Case Studies</Link></li>
-              <li><Link href="/site/careers">Careers</Link></li>
+              {footerLinks.map((l) => (
+                <li key={l.href}><Link href={l.href}>{l.label}</Link></li>
+              ))}
             </ul>
           </div>
 

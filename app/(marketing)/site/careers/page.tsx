@@ -1,36 +1,13 @@
 import Link from "next/link";
 import type { Metadata } from "next";
+import { getCareers } from "../_lib/content";
 import { ArrowRight } from "../_lib/icons";
 import CtaBand from "../_components/CtaBand";
 
 export const metadata: Metadata = { title: "Careers — Synergy" };
 
-const openings = [
-  { flag: "🇺🇸", title: "US Openings" },
-  { flag: "🇮🇳", title: "India Openings" },
-  { flag: "🌍", title: "Remote Openings" },
-];
-
-const faqs = [
-  {
-    q: "How do I apply for a job at your company?",
-    a: "To apply, submit your resume and details through our careers page or the contact form on our website — our talent team will take it from there.",
-  },
-  {
-    q: "Do you have internships or entry-level positions available?",
-    a: "Yes. We offer internships and entry-level positions for those just starting their careers. These roles provide valuable experience and the opportunity to learn from experienced professionals.",
-  },
-  {
-    q: "What is the hiring process like at your company?",
-    a: "Our hiring process typically includes submitting an application, a phone or video interview, and potentially an in-person interview. If a job offer is made, we'll guide you through the next steps.",
-  },
-  {
-    q: "Is your company diverse and inclusive?",
-    a: "Diversity and inclusivity are important values at Synergy. We are committed to building a team that represents a wide range of backgrounds, perspectives, and experiences.",
-  },
-];
-
-export default function CareersPage() {
+export default async function CareersPage() {
+  const { openings, faqs } = await getCareers();
   return (
     <>
       <section className="section">

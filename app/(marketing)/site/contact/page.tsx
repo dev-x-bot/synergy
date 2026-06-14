@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
-import { offices } from "../_lib/content";
+import { getOffices } from "../_lib/content";
 import ContactForm from "../_components/ContactForm";
 
 export const metadata: Metadata = { title: "Contact — Synergy" };
 
-export default function ContactPage() {
+export default async function ContactPage() {
+  const offices = await getOffices();
   return (
     <section className="section">
       <div className="wrap">

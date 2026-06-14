@@ -1,20 +1,14 @@
 import Link from "next/link";
-import { caseStudies } from "./_lib/content";
-import { serviceIcons, industryIcons, ArrowRight, BadgeCheck } from "./_lib/icons";
+import { getFeatured, getStripNames, getCaseStudies } from "./_lib/content";
+import { Icon, ArrowRight, BadgeCheck } from "./_lib/icons";
 import StatsSection from "./_components/StatsSection";
 
-const STRIP_NAMES = ["Banking", "Healthcare", "Retail", "Logistics", "Cloud", "Insurance", "Manufacturing", "Telecom", "Public Sector"];
-
-const expertise = [
-  { h: "AI / ML", href: "/site/expertise/ai-ml", Icon: serviceIcons["ai-ml"], p: "Production-grade machine learning, generative AI and intelligent automation that turn data into decisions." },
-  { h: "Banking & Capital Markets", href: "/site/industries/banking-capital-markets", Icon: industryIcons["banking-capital-markets"], p: "Resilient, compliant platforms for the institutions that keep global capital moving safely." },
-  { h: "Cloud Enablement", href: "/site/expertise/cloud-enablement", Icon: serviceIcons["cloud-enablement"], p: "Migration, modernization and FinOps that make the cloud faster, leaner and genuinely yours." },
-  { h: "Digital Transformation", href: "/site/expertise/digital-transformation", Icon: serviceIcons["digital-transformation"], p: "End-to-end reinvention of products and operations, designed around the people who use them." },
-  { h: "Cyber Security", href: "/site/expertise/cyber-security", Icon: serviceIcons["cyber-security"], p: "Zero-trust architecture, threat detection and governance that protects what matters most." },
-  { h: "Emerging Talent", href: "/site/expertise/emerging-talent", Icon: serviceIcons["emerging-talent"], p: "Trained, screened and mentored specialists ready to plug into your roadmap from day one." },
-];
-
-export default function Home() {
+export default async function Home() {
+  const [featured, stripNames, caseStudies] = await Promise.all([
+    getFeatured(),
+    getStripNames(),
+    getCaseStudies(),
+  ]);
   return (
     <>
       {/* HERO */}
@@ -51,8 +45,8 @@ export default function Home() {
           <span className="lbl">Expertise that powers</span>
           <div className="marquee">
             <div className="marquee-track" aria-hidden="false">
-              {STRIP_NAMES.map((n) => <span className="name" key={n}>{n}</span>)}
-              {STRIP_NAMES.map((n) => <span className="name" key={n + "-2"} aria-hidden="true">{n}</span>)}
+              {stripNames.map((n) => <span className="name" key={n}>{n}</span>)}
+              {stripNames.map((n) => <span className="name" key={n + "-2"} aria-hidden="true">{n}</span>)}
             </div>
           </div>
         </div>
@@ -76,11 +70,11 @@ export default function Home() {
           </div>
 
           <div className="exp-grid">
-            {expertise.map((e, i) => (
-              <article className={`exp-card reveal${i % 3 ? " d" + (i % 3) : ""}`} key={e.h}>
-                <div className="exp-ic"><e.Icon strokeWidth={1.7} /></div>
-                <h3>{e.h}</h3>
-                <p>{e.p}</p>
+            {featured.map((e, i) => (
+              <article className={`exp-card reveal${i % 3 ? " d" + (i % 3) : ""}`} key={e.title}>
+                <div className="exp-ic"><Icon name={e.icon} strokeWidth={1.7} /></div>
+                <h3>{e.title}</h3>
+                <p>{e.blurb}</p>
                 <Link className="exp-more" href={e.href}>Learn more <ArrowRight /></Link>
               </article>
             ))}

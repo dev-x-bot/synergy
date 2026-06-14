@@ -1,0 +1,43 @@
+{
+  "stats": [
+    { "target": 2, "suffix": "", "label": "Global locations" },
+    { "target": 500, "suffix": "+", "label": "Consultants hired" },
+    { "target": 60, "suffix": "+", "label": "Projects delivered" }
+  ],
+  "offices": [
+    { "city": "Florida, USA", "addr": "32499, SAPNA CHIME DR WESLEY CHAPEL, FL, 33545-4999, United States.", "link": "Get directions →" },
+    { "city": "Hyderabad, India", "addr": "5th Floor, Western Aqua, Whitefields, Hitech City, Hyderabad 500081.", "link": "+91 96449 56789" }
+  ],
+  "stripNames": ["Banking", "Healthcare", "Retail", "Logistics", "Cloud", "Insurance", "Manufacturing", "Telecom", "Public Sector"],
+  "home": {
+    "featured": [
+      { "title": "AI / ML", "href": "/site/expertise/ai-ml", "icon": "Cpu", "blurb": "Production-grade machine learning, generative AI and intelligent automation that turn data into decisions." },
+      { "title": "Banking & Capital Markets", "href": "/site/industries/banking-capital-markets", "icon": "Landmark", "blurb": "Resilient, compliant platforms for the institutions that keep global capital moving safely." },
+      { "title": "Cloud Enablement", "href": "/site/expertise/cloud-enablement", "icon": "Cloud", "blurb": "Migration, modernization and FinOps that make the cloud faster, leaner and genuinely yours." },
+      { "title": "Digital Transformation", "href": "/site/expertise/digital-transformation", "icon": "TrendingUp", "blurb": "End-to-end reinvention of products and operations, designed around the people who use them." },
+      { "title": "Cyber Security", "href": "/site/expertise/cyber-security", "icon": "ShieldCheck", "blurb": "Zero-trust architecture, threat detection and governance that protects what matters most." },
+      { "title": "Emerging Talent", "href": "/site/expertise/emerging-talent", "icon": "GraduationCap", "blurb": "Trained, screened and mentored specialists ready to plug into your roadmap from day one." }
+    ]
+  },
+  "footerLinks": [
+    { "label": "AI / ML", "href": "/site/expertise/ai-ml" },
+    { "label": "Banking", "href": "/site/industries/banking-capital-markets" },
+    { "label": "Cloud Solutions", "href": "/site/expertise/cloud-enablement" },
+    { "label": "Digital Transformation", "href": "/site/expertise/digital-transformation" },
+    { "label": "Case Studies", "href": "/site/case-studies" },
+    { "label": "Careers", "href": "/site/careers" }
+  ],
+  "careers": {
+    "openings": [
+      { "flag": "🇺🇸", "title": "US Openings" },
+      { "flag": "🇮🇳", "title": "India Openings" },
+      { "flag": "🌍", "title": "Remote Openings" }
+    ],
+    "faqs": [
+      { "q": "How do I apply for a job at your company?", "a": "To apply, submit your resume and details through our careers page or the contact form on our website — our talent team will take it from there." },
+      { "q": "Do you have internships or entry-level positions available?", "a": "Yes. We offer internships and entry-level positions for those just starting their careers. These roles provide valuable experience and the opportunity to learn from experienced professionals." },
+      { "q": "What is the hiring process like at your company?", "a": "Our hiring process typically includes submitting an application, a phone or video interview, and potentially an in-person interview. If a job offer is made, we'll guide you through the next steps." },
+      { "q": "Is your company diverse and inclusive?", "a": "Diversity and inclusivity are important values at Synergy. We are committed to building a team that represents a wide range of backgrounds, perspectives, and experiences." }
+    ]
+  }
+}
