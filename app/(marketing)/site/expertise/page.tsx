@@ -4,19 +4,19 @@ import { services } from "../_lib/content";
 import { serviceIcons, ArrowRight } from "../_lib/icons";
 import CtaBand from "../_components/CtaBand";
 
-export const metadata: Metadata = { title: "Services — Synergy" };
+export const metadata: Metadata = { title: "Expertise — Synergy" };
 
-const items = services.filter((s) => s.kind !== "expertise");
+const items = services.filter((s) => s.kind === "expertise");
 
-export default function ServicesPage() {
+export default function ExpertisePage() {
   return (
     <>
       <section className="section">
         <div className="wrap">
           <div className="section-head center">
-            <span className="eyebrow reveal"><span className="tick"></span>What we do</span>
-            <h1 className="reveal d1">Services</h1>
-            <p className="reveal d2">Specialists, squads and full project teams — engaged the way that fits your roadmap.</p>
+            <span className="eyebrow reveal"><span className="tick"></span>Extent of expertise</span>
+            <h1 className="reveal d1">Expertise</h1>
+            <p className="reveal d2">Unparalleled depth and breadth across the disciplines that move modern enterprises forward.</p>
           </div>
           <div className="exp-grid">
             {items.map((s, i) => {
@@ -26,7 +26,7 @@ export default function ServicesPage() {
                   <div className="exp-ic"><Icon strokeWidth={1.7} /></div>
                   <h3>{s.title}</h3>
                   <p>{s.tagline}</p>
-                  <Link className="exp-more" href={`/site/services/${s.slug}`}>Learn more <ArrowRight /></Link>
+                  <Link className="exp-more" href={`/site/expertise/${s.slug}`}>Learn more <ArrowRight /></Link>
                 </article>
               );
             })}

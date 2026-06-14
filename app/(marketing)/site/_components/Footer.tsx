@@ -26,10 +26,10 @@ export default function Footer() {
           <div className="foot-col">
             <h4>Useful Links</h4>
             <ul>
-              <li><Link href="/site/services/ai-ml">AI / ML</Link></li>
+              <li><Link href="/site/expertise/ai-ml">AI / ML</Link></li>
               <li><Link href="/site/industries/banking-capital-markets">Banking</Link></li>
-              <li><Link href="/site/services/cloud-enablement">Cloud Solutions</Link></li>
-              <li><Link href="/site/services/digital-transformation">Digital Transformation</Link></li>
+              <li><Link href="/site/expertise/cloud-enablement">Cloud Solutions</Link></li>
+              <li><Link href="/site/expertise/digital-transformation">Digital Transformation</Link></li>
               <li><Link href="/site/case-studies">Case Studies</Link></li>
               <li><Link href="/site/careers">Careers</Link></li>
             </ul>
@@ -53,10 +53,8 @@ export default function Footer() {
         </div>
 
         <div className="foot-bottom">
-          <span>© 2026 Synergy — Global IT Solutions. All rights reserved.</span>
+          <span>© 2020 Synergy — Global IT Solutions. All rights reserved.</span>
           <div className="links">
-            <Link href="/site/privacy">Privacy Policy</Link>
-            <Link href="/site/terms">Terms of Service</Link>
             <Link href="/site/contact">Contact</Link>
           </div>
         </div>

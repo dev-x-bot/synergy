@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import CtaBand from "../_components/CtaBand";
+import StatsSection from "../_components/StatsSection";
 
 export const metadata: Metadata = { title: "About Us — Synergy" };
 
@@ -30,18 +31,7 @@ export default function AboutPage() {
       </section>
 
       {/* STATS */}
-      <section className="section stats" style={{ paddingTop: 0 }}>
-        <div className="wrap stats-grid">
-          <div className="stats-intro reveal">
-            <span className="eyebrow"><span className="tick"></span>By the Numbers</span>
-            <h2 style={{ marginTop: 14 }}>Synergy, measured.</h2>
-            <p>A quick snapshot of the reach and momentum behind every engagement.</p>
-          </div>
-          <div className="stat reveal d1"><div className="num"><span data-target="4">0</span></div><div className="lbl">Global locations</div></div>
-          <div className="stat reveal d2"><div className="num"><span data-target="1200">0</span><span className="suf">+</span></div><div className="lbl">Consultants hired</div></div>
-          <div className="stat reveal d3"><div className="num"><span data-target="350">0</span><span className="suf">+</span></div><div className="lbl">Projects delivered</div></div>
-        </div>
-      </section>
+      <StatsSection flush />
 
       <CtaBand />
     </>

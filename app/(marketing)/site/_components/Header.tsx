@@ -49,12 +49,12 @@ export default function Header() {
             </div>
 
             <div className="nav-item">
-              <Link className="nav-link" href="/site/services">Expertise<ChevronDown className="chev" /></Link>
+              <Link className="nav-link" href="/site/expertise">Expertise<ChevronDown className="chev" /></Link>
               <div className="dropdown">
                 {svcExpertise.map((s) => {
                   const Icon = serviceIcons[s.slug];
                   return (
-                    <Link key={s.slug} href={`/site/services/${s.slug}`}>
+                    <Link key={s.slug} href={`/site/expertise/${s.slug}`}>
                       <span className="di"><Icon strokeWidth={1.8} /></span>{s.title}
                     </Link>
                   );
@@ -102,7 +102,7 @@ export default function Header() {
           <div className="mhead">Expertise</div>
           <div className="msub">
             {svcExpertise.map((s) => (
-              <Link key={s.slug} href={`/site/services/${s.slug}`}>{s.title}</Link>
+              <Link key={s.slug} href={`/site/expertise/${s.slug}`}>{s.title}</Link>
             ))}
           </div>
         </div>

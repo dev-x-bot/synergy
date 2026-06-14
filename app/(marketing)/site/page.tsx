@@ -1,16 +1,17 @@
 import Link from "next/link";
 import { caseStudies } from "./_lib/content";
 import { serviceIcons, industryIcons, ArrowRight, BadgeCheck } from "./_lib/icons";
+import StatsSection from "./_components/StatsSection";
 
 const STRIP_NAMES = ["Banking", "Healthcare", "Retail", "Logistics", "Cloud", "Insurance", "Manufacturing", "Telecom", "Public Sector"];
 
 const expertise = [
-  { h: "AI / ML", href: "/site/services/ai-ml", Icon: serviceIcons["ai-ml"], p: "Production-grade machine learning, generative AI and intelligent automation that turn data into decisions." },
+  { h: "AI / ML", href: "/site/expertise/ai-ml", Icon: serviceIcons["ai-ml"], p: "Production-grade machine learning, generative AI and intelligent automation that turn data into decisions." },
   { h: "Banking & Capital Markets", href: "/site/industries/banking-capital-markets", Icon: industryIcons["banking-capital-markets"], p: "Resilient, compliant platforms for the institutions that keep global capital moving safely." },
-  { h: "Cloud Enablement", href: "/site/services/cloud-enablement", Icon: serviceIcons["cloud-enablement"], p: "Migration, modernization and FinOps that make the cloud faster, leaner and genuinely yours." },
-  { h: "Digital Transformation", href: "/site/services/digital-transformation", Icon: serviceIcons["digital-transformation"], p: "End-to-end reinvention of products and operations, designed around the people who use them." },
-  { h: "Cyber Security", href: "/site/services/cyber-security", Icon: serviceIcons["cyber-security"], p: "Zero-trust architecture, threat detection and governance that protects what matters most." },
-  { h: "Emerging Talent", href: "/site/services/emerging-talent", Icon: serviceIcons["emerging-talent"], p: "Trained, screened and mentored specialists ready to plug into your roadmap from day one." },
+  { h: "Cloud Enablement", href: "/site/expertise/cloud-enablement", Icon: serviceIcons["cloud-enablement"], p: "Migration, modernization and FinOps that make the cloud faster, leaner and genuinely yours." },
+  { h: "Digital Transformation", href: "/site/expertise/digital-transformation", Icon: serviceIcons["digital-transformation"], p: "End-to-end reinvention of products and operations, designed around the people who use them." },
+  { h: "Cyber Security", href: "/site/expertise/cyber-security", Icon: serviceIcons["cyber-security"], p: "Zero-trust architecture, threat detection and governance that protects what matters most." },
+  { h: "Emerging Talent", href: "/site/expertise/emerging-talent", Icon: serviceIcons["emerging-talent"], p: "Trained, screened and mentored specialists ready to plug into your roadmap from day one." },
 ];
 
 export default function Home() {
@@ -25,11 +26,11 @@ export default function Home() {
         </div>
         <div className="wrap">
           <div className="hero-copy">
-          <h1 className="reveal d1">We deliver top talent by <span className="gradient-text">thinking globally</span> and acting locally.</h1>
+          <h1 className="reveal d1">Delivering <span className="gradient-text">Technology</span> That Works For You</h1>
           <p className="lead reveal d2">Whether you need a highly skilled specialist or a practiced full-time team, Synergy makes it happen — secure, scalable IT delivered around the way you work.</p>
           <div className="hero-actions reveal d3">
             <Link className="btn btn-primary" href="/site/contact">Find Talent Now<ArrowRight /></Link>
-            <Link className="btn btn-ghost" href="/site/services">Explore Expertise</Link>
+            <Link className="btn btn-ghost" href="/site/expertise">Explore Expertise</Link>
           </div>
           <div className="hero-badges reveal d4">
             <span className="hero-badge">
@@ -40,11 +41,7 @@ export default function Home() {
               <span className="hb-dot"></span>Global delivery, local presence
             </span>
           </div>
-          <div className="hero-trust reveal d5">
-            <div className="avatars"><span>AI</span><span>BK</span><span>CL</span><span>DX</span></div>
-            <span>Trusted across <b>4 global delivery hubs</b> and 40+ enterprise teams.</span>
-          </div>
-          </div>
+          </div> 
         </div>
       </section>
 
@@ -135,18 +132,7 @@ export default function Home() {
       </section>
 
       {/* STATS */}
-      <section className="section stats">
-        <div className="wrap stats-grid">
-          <div className="stats-intro reveal">
-            <span className="eyebrow"><span className="tick"></span>By the Numbers</span>
-            <h2 style={{ marginTop: 14 }}>Synergy, measured.</h2>
-            <p>A quick snapshot of the reach and momentum behind every engagement.</p>
-          </div>
-          <div className="stat reveal d1"><div className="num"><span data-target="4">0</span></div><div className="lbl">Global locations</div></div>
-          <div className="stat reveal d2"><div className="num"><span data-target="1200">0</span><span className="suf">+</span></div><div className="lbl">Consultants hired</div></div>
-          <div className="stat reveal d3"><div className="num"><span data-target="350">0</span><span className="suf">+</span></div><div className="lbl">Projects delivered</div></div>
-        </div>
-      </section>
+      <StatsSection />
     </>
   );
 }

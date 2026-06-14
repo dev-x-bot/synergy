@@ -5,7 +5,7 @@ import DetailPage from "../../_components/DetailPage";
 
 export function generateStaticParams() {
   return services
-    .filter((s) => s.kind !== "expertise")
+    .filter((s) => s.kind === "expertise")
     .map((s) => ({ slug: s.slug }));
 }
 
@@ -18,12 +18,12 @@ export async function generateMetadata({
   return { title: s ? `${s.title} — Synergy` : "Synergy" };
 }
 
-export default async function ServiceDetail({
+export default async function ExpertiseDetail({
   params,
 }: {
   params: Promise<{ slug: string }>;
 }) {
   const s = getService((await params).slug);
-  if (!s || s.kind === "expertise") notFound();
-  return <DetailPage kicker="Service" item={s} backHref="/site/services" backLabel="All services" />;
+  if (!s || s.kind !== "expertise") notFound();
+  return <DetailPage kicker="Expertise" item={s} backHref="/site/expertise" backLabel="All expertise" />;
 }

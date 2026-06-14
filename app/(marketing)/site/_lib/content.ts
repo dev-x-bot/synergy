@@ -202,8 +202,8 @@ export const caseStudies: CaseStudy[] = [
 ];
 
 export const offices = [
-  { city: "Austin, USA", addr: "WeWork Office Spaces, 600 Congress Ave, Austin, TX 78701, United States.", link: "Get directions →" },
-  { city: "Hyderabad, India", addr: "12th Floor, Western Aqua, Whitefields, Hitech City, Hyderabad 500081.", link: "+91 96493 45789" },
+  { city: "Florida, USA", addr: "32499, SAPNA CHIME DR WESLEY CHAPEL, FL, 33545-4999, United States.", link: "Get directions →" },
+  { city: "Hyderabad, India", addr: "5th Floor, Western Aqua, Whitefields, Hitech City, Hyderabad 500081.", link: "+91 96449 56789" },
 ];
 
 export const getService = (slug: string) => services.find((s) => s.slug === slug);
