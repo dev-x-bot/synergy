@@ -2,7 +2,7 @@
 // SiteInteractions (it animates any [data-target] in view).
 
 const STATS = [
-  { target: 4, suffix: "", label: "Global locations" },
+  { target: 2, suffix: "", label: "Global locations" },
   { target: 500, suffix: "+", label: "Consultants hired" },
   { target: 60, suffix: "+", label: "Projects delivered" },
 ];
