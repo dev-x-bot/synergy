@@ -29,9 +29,9 @@ export default function ListingSection({
             {items.map((s, i) => (
               <article className={`exp-card reveal${i % 3 ? " d" + (i % 3) : ""}`} key={s.slug}>
                 <div className="exp-ic"><Icon name={s.icon} strokeWidth={1.7} /></div>
-                <h3>{s.title}</h3>
+                <h2>{s.title}</h2>
                 <p>{s.tagline}</p>
-                <Link className="exp-more" href={`${basePath}/${s.slug}`}>Learn more <ArrowRight /></Link>
+                <Link className="exp-more" href={`${basePath}/${s.slug}`} aria-label={`Learn more about ${s.title}`}>Learn more <ArrowRight /></Link>
               </article>
             ))}
           </div>

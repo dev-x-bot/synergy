@@ -40,7 +40,7 @@ export default async function CaseStudyDetail({
           </div>
           <div className="cs-hero reveal d2" style={{ marginTop: 28 }}>
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src={c.image} alt={c.title} />
+            <img src={c.image} alt={c.title} width={800} height={520} />
           </div>
           <div className="prose reveal d3" style={{ marginTop: 28 }}>
             <h2>The challenge</h2>

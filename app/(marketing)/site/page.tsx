@@ -80,7 +80,7 @@ export default async function Home() {
                 <div className="exp-ic"><Icon name={e.icon} strokeWidth={1.7} /></div>
                 <h3>{e.title}</h3>
                 <p>{e.blurb}</p>
-                <Link className="exp-more" href={e.href}>Learn more <ArrowRight /></Link>
+                <Link className="exp-more" href={e.href} aria-label={`Learn more about ${e.title}`}>Learn more <ArrowRight /></Link>
               </article>
             ))}
           </div>
@@ -117,7 +117,7 @@ export default async function Home() {
                 <div className="case-media">
                   <span className="case-tag">{c.tag}</span>
                   {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img src={c.image} alt={c.title} />
+                  <img src={c.image} alt={c.title} width={800} height={520} />
                 </div>
                 <div className="case-body">
                   <h3>{c.title}</h3>

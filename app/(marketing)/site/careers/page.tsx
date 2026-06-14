@@ -22,7 +22,7 @@ export default async function CareersPage() {
             {openings.map((o, i) => (
               <article className={`open-card reveal${i ? " d" + i : ""}`} key={o.title}>
                 <span className="flag" aria-hidden="true">{o.flag}</span>
-                <h3>{o.title}</h3>
+                <h2>{o.title}</h2>
                 <Link className="btn btn-primary" href="/site/contact">
                   View Open Positions<ArrowRight />
                 </Link>

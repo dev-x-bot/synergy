@@ -35,7 +35,7 @@ export default function DetailPage({
             {item.points.map((pt, i) => (
               <article className={`exp-card reveal${i % 3 ? " d" + (i % 3) : ""}`} key={pt.h}>
                 <div className="exp-ic"><Icon name={pt.icon} strokeWidth={1.7} /></div>
-                <h3>{pt.h}</h3>
+                <h2>{pt.h}</h2>
                 <p>{pt.p}</p>
               </article>
             ))}

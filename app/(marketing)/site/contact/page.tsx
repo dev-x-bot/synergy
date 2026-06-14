@@ -17,12 +17,14 @@ export default async function ContactPage() {
 
         <div className="contact-grid">
           <div className="reveal">
+            <h2 className="sr-only">Send us a message</h2>
             <ContactForm />
           </div>
           <div className="contact-info reveal d1">
+            <h2 className="sr-only">Our offices</h2>
             {offices.map((o) => (
               <div className="office" key={o.city}>
-                <h5><span className="pin"></span>{o.city}</h5>
+                <h3><span className="pin"></span>{o.city}</h3>
                 <p>{o.addr}</p>
                 <a href="#">{o.link}</a>
               </div>

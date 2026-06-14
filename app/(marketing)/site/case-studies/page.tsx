@@ -23,7 +23,7 @@ export default async function CaseStudiesPage() {
                 <div className="case-media">
                   <span className="case-tag">{c.tag}</span>
                   {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img src={c.image} alt={c.title} />
+                  <img src={c.image} alt={c.title} width={800} height={520} />
                 </div>
                 <div className="case-body">
                   <h3>{c.title}</h3>

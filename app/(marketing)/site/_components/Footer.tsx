@@ -25,7 +25,7 @@ export default async function Footer() {
           </div>
 
           <div className="foot-col">
-            <h4>Useful Links</h4>
+            <h2>Useful Links</h2>
             <ul>
               {footerLinks.map((l) => (
                 <li key={l.href}><Link href={l.href}>{l.label}</Link></li>
@@ -34,7 +34,7 @@ export default async function Footer() {
           </div>
 
           <div className="foot-col">
-            <h4>Subscribe Now</h4>
+            <h2>Subscribe Now</h2>
             <p className="foot-sub">Get the latest roles and insights right in your inbox.</p>
             <SubscribeForm />
           </div>
@@ -43,7 +43,7 @@ export default async function Footer() {
         <div className="offices">
           {offices.map((o) => (
             <div className="office" key={o.city}>
-              <h5><span className="pin"></span>{o.city}</h5>
+              <h3><span className="pin"></span>{o.city}</h3>
               <p>{o.addr}</p>
               <a href="#">{o.link}</a>
             </div>
