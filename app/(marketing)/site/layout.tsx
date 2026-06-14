@@ -7,8 +7,9 @@ export default function SiteLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <>
+      <a className="skip-link" href="#main">Skip to content</a>
       <Header />
-      <main>{children}</main>
+      <main id="main">{children}</main>
       <Footer />
       <SiteInteractions />
     </>

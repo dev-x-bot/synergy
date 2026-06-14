@@ -293,7 +293,10 @@ h1,h2,h3,h4{font-family:var(--font-display);font-weight:600;letter-spacing:-.02e
 }
 .nav-link:hover{color:var(--ink);background:var(--bg-2);}
 .nav-link .chev{width:13px;height:13px;transition:transform .25s;opacity:.6;}
-.nav-item:hover .nav-link .chev{transform:rotate(180deg);}
+.nav-item:hover .nav-link .chev,.nav-item:focus-within .nav-link .chev{transform:rotate(180deg);}
+/* skip link (a11y) */
+.skip-link{position:absolute;left:-9999px;top:8px;z-index:200;background:var(--ink);color:#fff;padding:10px 16px;border-radius:10px;font-weight:600;font-size:14px;}
+.skip-link:focus{left:16px;}
 
 /* dropdown */
 .dropdown{

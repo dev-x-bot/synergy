@@ -6,7 +6,7 @@ import industriesData from "./data/industries.json";
 import caseStudiesData from "./data/case-studies.json";
 import siteData from "./data/site.json";
 import type {
-  Item, CaseStudy, Office, Stat, FeaturedCard, FooterLink, Opening, Faq,
+  Item, CaseStudy, Office, Stat, FeaturedCard, FooterLink, Opening, Faq, SiteMeta,
 } from "./types";
 
 const services = servicesData as Item[];
@@ -44,6 +44,9 @@ export async function getCaseStudyBySlug(slug: string): Promise<CaseStudy | unde
 }
 
 // ── Site-level content ──
+export async function getSiteMeta(): Promise<SiteMeta> {
+  return siteData.meta as SiteMeta;
+}
 export async function getStats(): Promise<Stat[]> {
   return siteData.stats as Stat[];
 }

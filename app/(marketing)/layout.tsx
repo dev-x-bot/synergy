@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Roboto_Slab } from "next/font/google";
 import "./site.css";
+import { getSiteMeta } from "./site/_lib/content";
 
 // Brand wordmark font ("Synergy") — slab serif matching the logo.
 const robotoSlab = Roboto_Slab({
@@ -10,12 +11,29 @@ const robotoSlab = Roboto_Slab({
   display: "swap",
 });
 
-export const metadata: Metadata = {
-  title: "Synergy — Global IT Solutions",
-  description:
-    "Synergy — Global IT Solutions. We deliver top talent by thinking globally and acting locally. Secure, scalable IT, AI/ML, cloud and digital transformation expertise.",
-  icons: { icon: "/site/logo-full.svg" },
-};
+export async function generateMetadata(): Promise<Metadata> {
+  const m = await getSiteMeta();
+  return {
+    metadataBase: new URL(m.siteUrl),
+    title: { default: m.name, template: "%s" },
+    description: m.description,
+    applicationName: m.shortName,
+    icons: { icon: "/site/logo-full.svg" },
+    alternates: { canonical: m.basePath },
+    openGraph: {
+      type: "website",
+      siteName: m.name,
+      title: m.name,
+      description: m.description,
+      url: m.basePath,
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: m.name,
+      description: m.description,
+    },
+  };
+}
 
 export const viewport: Viewport = {
   themeColor: "#fbfcf8",

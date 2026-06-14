@@ -27,3 +27,11 @@ export type FeaturedCard = { title: string; href: string; icon: string; blurb: s
 export type FooterLink = { label: string; href: string };
 export type Opening = { flag: string; title: string };
 export type Faq = { q: string; a: string };
+export type SiteMeta = {
+  name: string;
+  shortName: string;
+  siteUrl: string;
+  basePath: string;
+  description: string;
+  email: string;
+};

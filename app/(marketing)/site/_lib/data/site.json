@@ -1,4 +1,12 @@
 {
+  "meta": {
+    "name": "Synergy — Global IT Solutions",
+    "shortName": "Synergy",
+    "siteUrl": "https://synergyglobalits.com",
+    "basePath": "/site",
+    "description": "Synergy — Global IT Solutions. We deliver top talent by thinking globally and acting locally: secure, scalable IT across AI/ML, cloud, cyber security and digital transformation.",
+    "email": "dev@x-bot.co"
+  },
   "stats": [
     { "target": 2, "suffix": "", "label": "Global locations" },
     { "target": 500, "suffix": "+", "label": "Consultants hired" },

@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
-import { getOffices } from "../_lib/content";
+import { getOffices, getSiteMeta } from "../_lib/content";
 import ContactForm from "../_components/ContactForm";
 
 export const metadata: Metadata = { title: "Contact — Synergy" };
 
 export default async function ContactPage() {
-  const offices = await getOffices();
+  const [offices, meta] = await Promise.all([getOffices(), getSiteMeta()]);
   return (
     <section className="section">
       <div className="wrap">
@@ -20,6 +20,10 @@ export default async function ContactPage() {
             <ContactForm />
           </div>
           <div className="contact-info reveal d1">
+            <div className="office">
+              <h5><span className="pin"></span>Email us</h5>
+              <p><a href={`mailto:${meta.email}`}>{meta.email}</a></p>
+            </div>
             {offices.map((o) => (
               <div className="office" key={o.city}>
                 <h5><span className="pin"></span>{o.city}</h5>
